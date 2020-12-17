@@ -111,7 +111,16 @@
     </el-date-picker>
   </div>
 </div>
-
+<div class="container">
+  <div class="block">
+    <span class="demonstration">季度</span>
+    <el-date-picker
+      type="qurater"
+      v-model="value5"
+      placeholder="选择季度">
+    </el-date-picker>
+  </div>
+</div>
 <script>
   export default {
     data() {
@@ -119,7 +128,8 @@
         value1: '',
         value2: '',
         value3: '',
-        value4: ''
+        value4: '',
+        value5: ''
       };
     }
   };
@@ -267,7 +277,6 @@
 </script>
 ```
 :::
-
 
 ###  日期格式
 

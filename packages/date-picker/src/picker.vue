@@ -126,6 +126,7 @@ const HAVE_TRIGGER_TYPES = [
   'week',
   'month',
   'year',
+  'qurater',
   'daterange',
   'monthrange',
   'timerange',

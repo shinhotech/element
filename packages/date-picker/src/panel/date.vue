@@ -107,6 +107,14 @@
               :date="date"
               :disabled-date="disabledDate">
             </year-table>
+            <qurater-table
+              v-show="currentView === 'qurater'"
+              @pick="handleYearPick"
+              :value="value"
+              :default-value="defaultValue ? new Date(defaultValue) : null"
+              :date="date"
+              :disabled-date="disabledDate">
+            </qurater-table>
             <month-table
               v-show="currentView === 'month'"
               @pick="handleMonthPick"
@@ -168,6 +176,7 @@
   import ElButton from 'element-ui/packages/button';
   import TimePicker from './time';
   import YearTable from '../basic/year-table';
+  import QuraterTable from '../basic/qurater-table';
   import MonthTable from '../basic/month-table';
   import DateTable from '../basic/date-table';
 
@@ -500,7 +509,7 @@
     },
 
     components: {
-      TimePicker, YearTable, MonthTable, DateTable, ElInput, ElButton
+      TimePicker, YearTable, MonthTable, DateTable, ElInput, ElButton, QuraterTable
     },
 
     data() {
