@@ -109,6 +109,7 @@ const NewPopper = {
 const DEFAULT_FORMATS = {
   date: 'yyyy-MM-dd',
   month: 'yyyy-MM',
+  qurater: 'yyyy-MM',
   datetime: 'yyyy-MM-dd HH:mm:ss',
   time: 'HH:mm:ss',
   week: 'yyyywWW',
@@ -408,6 +409,7 @@ export default {
 
   watch: {
     pickerVisible(val) {
+      console.log('val: ', val);
       if (this.readonly || this.pickerDisabled) return;
       if (val) {
         this.showPicker();
@@ -488,6 +490,8 @@ export default {
         return 'month';
       } else if (this.type === 'year') {
         return 'year';
+      } else if (this.type === 'qurater') {
+        return 'qurater';
       } else if (this.type === 'dates') {
         return 'dates';
       }
@@ -727,7 +731,8 @@ export default {
 
     handleFocus() {
       const type = this.type;
-
+      console.log('this.pickerVisible: ', this.pickerVisible);
+      console.log('HAVE_TRIGGER_TYPES.indexOf(type): ', HAVE_TRIGGER_TYPES.indexOf(type));
       if (HAVE_TRIGGER_TYPES.indexOf(type) !== -1 && !this.pickerVisible) {
         this.pickerVisible = true;
       }
@@ -789,6 +794,7 @@ export default {
 
     handleRangeClick() {
       const type = this.type;
+      console.log('type: ', type);
 
       if (HAVE_TRIGGER_TYPES.indexOf(type) !== -1 && !this.pickerVisible) {
         this.pickerVisible = true;
@@ -868,6 +874,7 @@ export default {
 
       this.picker.$on('dodestroy', this.doDestroy);
       this.picker.$on('pick', (date = '', visible = false) => {
+        console.log('date: ', date);
         this.userInput = null;
         this.pickerVisible = this.picker.visible = visible;
         this.emitInput(date);

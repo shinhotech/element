@@ -109,7 +109,7 @@
             </year-table>
             <qurater-table
               v-show="currentView === 'qurater'"
-              @pick="handleYearPick"
+              @pick="handleQuraterPick"
               :value="value"
               :default-value="defaultValue ? new Date(defaultValue) : null"
               :date="date"
@@ -217,6 +217,8 @@
       },
 
       selectionMode(newVal) {
+        console.log('newVal: ', newVal);
+        console.log('this.currentView: ', this.currentView);
         if (newVal === 'month') {
           /* istanbul ignore next */
           if (this.currentView !== 'year' || this.currentView !== 'month') {
@@ -225,6 +227,7 @@
         } else if (newVal === 'dates') {
           this.currentView = 'date';
         }
+        console.log('this.currentView: ', this.currentView);
       }
     },
 
@@ -272,6 +275,7 @@
       },
 
       showYearPicker() {
+        console.log('showYearPicker: ', this.currentView);
         this.currentView = 'year';
       },
 
@@ -366,12 +370,20 @@
       handleYearPick(year) {
         if (this.selectionMode === 'year') {
           this.date = modifyDate(this.date, year, 0, 1);
+          console.log('this.date: ', this.date);
           this.emit(this.date);
         } else {
           this.date = changeYearMonthAndClampDate(this.date, year, this.month);
           // TODO: should emit intermediate value ??
           // this.emit(this.date, true);
           this.currentView = 'month';
+        }
+      },
+
+      handleQuraterPick(qurater) {
+        console.log('this.selectionMode: ', this.selectionMode);
+        if (this.selectionMode === 'qurater') {
+          console.log('qurater: ', qurater, this.date);
         }
       },
 
@@ -399,10 +411,13 @@
       },
 
       resetView() {
+        console.log('this.selectionMode: ', this.selectionMode);
         if (this.selectionMode === 'month') {
           this.currentView = 'month';
         } else if (this.selectionMode === 'year') {
           this.currentView = 'year';
+        } else if (this.selectionMode === 'qurater') {
+          this.currentView = 'qurater';
         } else {
           this.currentView = 'date';
         }

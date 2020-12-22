@@ -11,7 +11,7 @@
 
   td {
     text-align: center;
-    padding: 20px 3px;
+    padding: 10px 3px;
     cursor: pointer;
 
     &.today {
@@ -32,8 +32,7 @@
     }
 
     .cell {
-      width: 48px;
-      height: 32px;
+      width: 80px;
       display: block;
       line-height: 32px;
       color: $--datepicker-font-color;
@@ -41,6 +40,12 @@
 
       &:hover {
         color: $--datepicker-hover-font-color;
+        // background-color: $--color-primary-light-9;
+        // border: 1px solid $--color-primary-light-6;
+      }
+      & p {
+        line-height: 22px;
+        margin: 0;
       }
     }
 
