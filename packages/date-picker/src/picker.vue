@@ -86,7 +86,7 @@
 <script>
 import Vue from 'vue';
 import Clickoutside from 'element-ui/src/utils/clickoutside';
-import { formatDate, parseDate, isDateObject, getWeekNumber } from 'element-ui/src/utils/date-util';
+import { formatDate, formatDateQuarter, parseDate, isDateObject, getWeekNumber } from 'element-ui/src/utils/date-util';
 import Popper from 'element-ui/src/utils/vue-popper';
 import Emitter from 'element-ui/src/mixins/emitter';
 import ElInput from 'element-ui/packages/input';
@@ -109,7 +109,7 @@ const NewPopper = {
 const DEFAULT_FORMATS = {
   date: 'yyyy-MM-dd',
   month: 'yyyy-MM',
-  qurater: 'yyyy-MM',
+  quarter: 'yyyy-MM',
   datetime: 'yyyy-MM-dd HH:mm:ss',
   time: 'HH:mm:ss',
   week: 'yyyywWW',
@@ -127,7 +127,7 @@ const HAVE_TRIGGER_TYPES = [
   'week',
   'month',
   'year',
-  'qurater',
+  'quarter',
   'daterange',
   'monthrange',
   'timerange',
@@ -136,6 +136,7 @@ const HAVE_TRIGGER_TYPES = [
 ];
 const DATE_FORMATTER = function(value, format) {
   if (format === 'timestamp') return value.getTime();
+  console.log('value: ', value);
   return formatDate(value, format);
 };
 const DATE_PARSER = function(text, format) {
@@ -230,6 +231,10 @@ const TYPE_VALUE_RESOLVER_MAP = {
     parser: DATE_PARSER
   },
   year: {
+    formatter: DATE_FORMATTER,
+    parser: DATE_PARSER
+  },
+  quarter: {
     formatter: DATE_FORMATTER,
     parser: DATE_PARSER
   },
@@ -490,8 +495,8 @@ export default {
         return 'month';
       } else if (this.type === 'year') {
         return 'year';
-      } else if (this.type === 'qurater') {
-        return 'qurater';
+      } else if (this.type === 'quarter') {
+        return 'quarter';
       } else if (this.type === 'dates') {
         return 'dates';
       }
@@ -508,6 +513,10 @@ export default {
 
     displayValue() {
       const formattedValue = formatAsFormatAndType(this.parsedValue, this.format, this.type, this.rangeSeparator);
+      console.log('this.parsedValue, this.format, this.type, this.rangeSeparator: ', this.parsedValue, this.format, this.type, this.rangeSeparator);
+      if (this.type === 'quarter') {
+        return formatDateQuarter(this.parsedValue, this.format);
+      }
       if (Array.isArray(this.userInput)) {
         return [
           this.userInput[0] || (formattedValue && formattedValue[0]) || '',

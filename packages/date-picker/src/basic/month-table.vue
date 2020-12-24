@@ -206,6 +206,7 @@
             this.rangeState.selecting = false;
           }
         } else {
+          console.log('month: ', month);
           this.$emit('pick', month);
         }
       }

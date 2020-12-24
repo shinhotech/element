@@ -107,14 +107,14 @@
               :date="date"
               :disabled-date="disabledDate">
             </year-table>
-            <qurater-table
-              v-show="currentView === 'qurater'"
+            <quarter-table
+              v-show="currentView === 'quarter'"
               @pick="handleQuraterPick"
               :value="value"
               :default-value="defaultValue ? new Date(defaultValue) : null"
               :date="date"
               :disabled-date="disabledDate">
-            </qurater-table>
+            </quarter-table>
             <month-table
               v-show="currentView === 'month'"
               @pick="handleMonthPick"
@@ -176,7 +176,7 @@
   import ElButton from 'element-ui/packages/button';
   import TimePicker from './time';
   import YearTable from '../basic/year-table';
-  import QuraterTable from '../basic/qurater-table';
+  import QuarterTable from '../basic/quarter-table';
   import MonthTable from '../basic/month-table';
   import DateTable from '../basic/date-table';
 
@@ -340,6 +340,7 @@
       handleMonthPick(month) {
         if (this.selectionMode === 'month') {
           this.date = modifyDate(this.date, this.year, month, 1);
+          console.log('this.date: ', this.date);
           this.emit(this.date);
         } else {
           this.date = changeYearMonthAndClampDate(this.date, this.year, month);
@@ -380,10 +381,12 @@
         }
       },
 
-      handleQuraterPick(qurater) {
+      handleQuraterPick(quarter) {
         console.log('this.selectionMode: ', this.selectionMode);
-        if (this.selectionMode === 'qurater') {
-          console.log('qurater: ', qurater, this.date);
+        if (this.selectionMode === 'quarter') {
+          this.date = modifyDate(this.date, this.year, quarter, 1);
+          console.log('this.date: ', this.date);
+          this.emit(this.date);
         }
       },
 
@@ -416,8 +419,8 @@
           this.currentView = 'month';
         } else if (this.selectionMode === 'year') {
           this.currentView = 'year';
-        } else if (this.selectionMode === 'qurater') {
-          this.currentView = 'qurater';
+        } else if (this.selectionMode === 'quarter') {
+          this.currentView = 'quarter';
         } else {
           this.currentView = 'date';
         }
@@ -524,7 +527,7 @@
     },
 
     components: {
-      TimePicker, YearTable, MonthTable, DateTable, ElInput, ElButton, QuraterTable
+      TimePicker, YearTable, MonthTable, DateTable, ElInput, ElButton, QuarterTable
     },
 
     data() {

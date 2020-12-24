@@ -257,6 +257,7 @@
    * @param {string} mask Format of the date, i.e. 'mm-dd-yy' or 'shortDate'
    */
   fecha.format = function (dateObj, mask, i18nSettings) {
+    console.log('dateObj, mask, i18nSettings: ', dateObj, mask, i18nSettings);
     var i18n = i18nSettings || fecha.i18n;
 
     if (typeof dateObj === 'number') {
@@ -270,20 +271,25 @@
     mask = fecha.masks[mask] || mask || fecha.masks['default'];
 
     var literals = [];
-
+    
     // Make literals inactive by replacing them with ??
     mask = mask.replace(literal, function($0, $1) {
       literals.push($1);
       return '@@@';
     });
+    console.log('mask: ', mask);
     // Apply formatting rules
     mask = mask.replace(token, function ($0) {
+      console.log('0: ', $0 in formatFlags, $0);
       return $0 in formatFlags ? formatFlags[$0](dateObj, i18n) : $0.slice(1, $0.length - 1);
     });
-    // Inline literal values back into the formatted value
-    return mask.replace(/@@@/g, function() {
+    console.log('mask: ', mask);
+    const aaa = mask.replace(/@@@/g, function() {
       return literals.shift();
     });
+    console.log('aaa: ', aaa);
+    // Inline literal values back into the formatted value
+    return aaa;
   };
 
   /**
@@ -301,6 +307,7 @@
     }
 
     format = fecha.masks[format] || format;
+    console.log('format: ', format);
 
     // Avoid regular expression denial of service, fail early for really long strings
     // https://www.owasp.org/index.php/Regular_expression_Denial_of_Service_-_ReDoS
@@ -315,6 +322,7 @@
       literals.push($1);
       return '@@@';
     });
+    console.log('format: ', format);
     var newFormat = regexEscape(format).replace(token, function ($0) {
       if (parseFlags[$0]) {
         var info = parseFlags[$0];

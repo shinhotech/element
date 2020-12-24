@@ -3,7 +3,7 @@ import { t } from 'element-ui/src/locale';
 
 const weeks = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 const months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
-
+const quarterSet = [{'Q1': [1, 2, 3]}, {'Q2': [4, 5, 6]}, {'Q3': [7, 8, 9]}, {'Q4': [10, 11, 12]}];
 const newArray = function(start, end) {
   let result = [];
   for (let i = start; i <= end; i++) {
@@ -45,6 +45,45 @@ export const formatDate = function(date, format) {
 
 export const parseDate = function(string, format) {
   return fecha.parse(string, format || 'yyyy-MM-dd', getI18nSettings());
+};
+
+export const formatDateQuarter = function(date, format) {
+  console.log('date: ', date);
+  if (!date) {
+    return date;
+  }
+  function pad(val, len) {
+    val = String(val);
+    len = len || 2;
+    while (val.length < len) {
+      val = '0' + val;
+    }
+    return val;
+  }
+  const formatFlags = {
+    yy: function(dateObj) {
+      return pad(String(dateObj.getFullYear()), 4).substr(2);
+    },
+    yyyy: function(dateObj) {
+      return pad(dateObj.getFullYear(), 4);
+    },
+    MM: function(dateObj) {
+      const currentMonth = dateObj.getMonth() + 1;
+      let currentQuarter = 'Q1';
+      quarterSet.forEach(item => {
+        const quarterItemKey = Object.keys(item)[0];
+        if (item[quarterItemKey].includes(currentMonth)) {
+          currentQuarter = quarterItemKey;
+        }
+      });
+      console.log('currentQuarter: ', currentQuarter);
+      return currentQuarter;
+    }
+  };
+  var token = /d{1,4}|M{1,4}|yy(?:yy)?|S{1,3}|Do|ZZ|([HhMsDm])\1?|[aA]|"[^"]*"|'[^']*'/g;
+  return format.replace(token, function($0) {
+    return $0 in formatFlags ? formatFlags[$0](date) : $0.slice(1, $0.length - 1);
+  });
 };
 
 export const getDayCountOfMonth = function(year, month) {

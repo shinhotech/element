@@ -115,7 +115,8 @@
   <div class="block">
     <span class="demonstration">季度</span>
     <el-date-picker
-      type="qurater"
+      type="quarter"
+      format="yyyy-MM"
       v-model="value5"
       placeholder="选择季度">
     </el-date-picker>
@@ -126,7 +127,7 @@
     data() {
       return {
         value1: '',
-        value2: '',
+        value2: '2020-Q1',
         value3: '',
         value4: '',
         value5: ''

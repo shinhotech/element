@@ -1,6 +1,6 @@
 @import "../common/var";
 
-@include b(qurater-table) {
+@include b(quarter-table) {
   font-size: 12px;
   margin: -1px;
   border-collapse: collapse;
@@ -11,7 +11,7 @@
 
   td {
     text-align: center;
-    padding: 10px 3px;
+    // padding: 10px 3px;
     cursor: pointer;
 
     &.today {
@@ -35,6 +35,7 @@
       width: 80px;
       display: block;
       line-height: 32px;
+      padding: 10px 3px;
       color: $--datepicker-font-color;
       margin: 0 auto;
 
