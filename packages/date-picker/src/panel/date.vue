@@ -63,7 +63,7 @@
               class="el-picker-panel__icon-btn el-date-picker__prev-btn el-icon-arrow-left">
             </button>
             <span
-              @click="showYearPicker"
+              @click="currentView !== 'quarter' && showYearPicker"
               role="button"
               class="el-date-picker__header-label">{{ yearLabel }}</span>
             <span
@@ -207,6 +207,7 @@
       },
 
       defaultValue(val) {
+        console.log('val: ', val);
         if (!isDate(this.value)) {
           this.date = val ? new Date(val) : new Date();
         }

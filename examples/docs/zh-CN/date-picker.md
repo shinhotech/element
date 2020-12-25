@@ -127,10 +127,10 @@
     data() {
       return {
         value1: '',
-        value2: '2020-Q1',
+        value2: ['2020-03'],
         value3: '',
         value4: '',
-        value5: ''
+        value5: '2020-05'
       };
     }
   };
@@ -393,6 +393,38 @@
 ```
 :::
 
+### quarter 季度组件
+
+当`type="quarter"`时，显示季度组件，`defaultValue`必须到月份，
+示例如：`format="yyyy-MM"` 并且 `:value="2020-01"`来处理。
+- 另一种解决方法： 传入`2020-Q1` 其中的`Q1/Q2/Q3/Q4`要写死
+
+:::demo
+```html
+<div class="container">
+  <div class="block">
+    <span class="demonstration">季度</span>
+    <el-date-picker
+      type="quarter"
+      format="yyyy-MM"
+      v-model="value5"
+      placeholder="选择季度">
+    </el-date-picker>
+  </div>
+</div>
+<script>
+  export default {
+    data() {
+      return {
+        value5: '2020-05'
+      };
+    }
+  };
+</script>
+```
+:::
+
+
 ### Attributes
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |
 |---------- |-------------- |---------- |--------------------------------  |-------- |
@@ -405,7 +437,7 @@
 | placeholder | 非范围选择时的占位内容 | string | — | — |
 | start-placeholder | 范围选择时开始日期的占位内容 | string | — | — |
 | end-placeholder | 范围选择时结束日期的占位内容 | string | — | — |
-| type | 显示类型 | string | year/month/date/dates/ week/datetime/datetimerange/ daterange/monthrange | date |
+| type | 显示类型 | string | quarter/year/month/date/dates/ week/datetime/datetimerange/ daterange/monthrange | date |
 | format | 显示在输入框中的格式 | string | 见[日期格式](#/zh-CN/component/date-picker#ri-qi-ge-shi) | yyyy-MM-dd |
 | align | 对齐方式 | string | left, center, right | left |
 | popper-class | DatePicker 下拉框的类名 | string | — | — |

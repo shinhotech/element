@@ -86,6 +86,10 @@ export const formatDateQuarter = function(date, format) {
   });
 };
 
+// export const parseDateQuarter = function(date, format) {
+//   const index = []
+// };
+
 export const getDayCountOfMonth = function(year, month) {
   if (month === 3 || month === 5 || month === 8 || month === 10) {
     return 30;

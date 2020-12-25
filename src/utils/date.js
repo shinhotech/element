@@ -307,7 +307,7 @@
     }
 
     format = fecha.masks[format] || format;
-    console.log('format: ', format);
+    // console.log('format: ', format);
 
     // Avoid regular expression denial of service, fail early for really long strings
     // https://www.owasp.org/index.php/Regular_expression_Denial_of_Service_-_ReDoS
@@ -322,7 +322,7 @@
       literals.push($1);
       return '@@@';
     });
-    console.log('format: ', format);
+    // console.log('format: ', format);
     var newFormat = regexEscape(format).replace(token, function ($0) {
       if (parseFlags[$0]) {
         var info = parseFlags[$0];

@@ -136,7 +136,7 @@ const HAVE_TRIGGER_TYPES = [
 ];
 const DATE_FORMATTER = function(value, format) {
   if (format === 'timestamp') return value.getTime();
-  console.log('value: ', value);
+  // console.log('value: ', value);
   return formatDate(value, format);
 };
 const DATE_PARSER = function(text, format) {
@@ -513,8 +513,8 @@ export default {
 
     displayValue() {
       const formattedValue = formatAsFormatAndType(this.parsedValue, this.format, this.type, this.rangeSeparator);
-      console.log('this.parsedValue, this.format, this.type, this.rangeSeparator: ', this.parsedValue, this.format, this.type, this.rangeSeparator);
       if (this.type === 'quarter') {
+        console.log('this.parsedValue, this.format, this.type, this.rangeSeparator: ', formattedValue, this.parsedValue, this.format, this.type, this.rangeSeparator);
         return formatDateQuarter(this.parsedValue, this.format);
       }
       if (Array.isArray(this.userInput)) {
