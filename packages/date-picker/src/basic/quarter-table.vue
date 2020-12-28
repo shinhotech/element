@@ -3,7 +3,7 @@
  * @Author: 19080088
  * @Date: 2020-11-24 10:49:51
  * @LastEditors: 19080088
- * @LastEditTime: 2020-12-28 14:28:47
+ * @LastEditTime: 2021-01-28 14:56:32
 -->
 <template>
   <table @click="handleQuraterTableClick" class="el-quarter-table">
@@ -48,6 +48,7 @@
     // const numOfDays = getDayCountOfMonth(year, month);
     // console.log('numOfDays: ', numOfDays);
     const firstDay = new Date(year, month, 1);
+    console.log('firstDay: ', firstDay);
     return [firstDay];
   };
   export default {
@@ -62,13 +63,7 @@
         const style = {};
         const today = new Date();
         let year = this.date.getFullYear();
-        let month = quarterList[2];
-        if (quarterList[2] === 12) {
-          // year += 1;
-          month = 11;
-        }
-        console.log('year, month: ', year, month);
-        console.log('datesInMonth(year, month): ', datesInMonth(year, month));
+        let month = quarterList[0] - 1;
         style.disabled = typeof this.disabledDate === 'function'
           ? datesInMonth(year, month).every(this.disabledDate)
           : false;
