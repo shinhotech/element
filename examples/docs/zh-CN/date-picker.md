@@ -89,6 +89,7 @@
     <el-date-picker
       v-model="value2"
       type="month"
+      :picker-options="pickerOptions"
       placeholder="选择月">
     </el-date-picker>
   </div>
@@ -99,6 +100,7 @@
     <el-date-picker
       v-model="value3"
       type="year"
+      :picker-options="pickerOptions"
       placeholder="选择年">
     </el-date-picker>
   </div>
@@ -126,6 +128,12 @@
   export default {
     data() {
       return {
+        pickerOptions: {
+          disabledDate(time) {
+            console.log('time.getTime() > Date.now(): ', time.getTime() > Date.now());
+            return time.getTime() > Date.now();
+          }
+        },
         value1: '',
         value2: ['2020-03'],
         value3: '',
@@ -408,6 +416,7 @@
       type="quarter"
       format="yyyy-MM"
       v-model="value5"
+      :picker-options="pickerOptions"
       placeholder="选择季度">
     </el-date-picker>
   </div>
@@ -416,6 +425,11 @@
   export default {
     data() {
       return {
+        pickerOptions: {
+          disabledDate(time) {
+            return time.getTime() > Date.now();
+          }
+        },
         value5: '2020-05'
       };
     }
