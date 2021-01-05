@@ -3,7 +3,7 @@
  * @Author: 19080088
  * @Date: 2020-11-24 10:49:51
  * @LastEditors: 19080088
- * @LastEditTime: 2021-01-28 14:56:32
+ * @LastEditTime: 2021-01-05 14:17:58
 -->
 <template>
   <table @click="handleQuraterTableClick" class="el-quarter-table">
@@ -67,7 +67,7 @@
         style.disabled = typeof this.disabledDate === 'function'
           ? datesInMonth(year, month).every(this.disabledDate)
           : false;
-        style.today = today.getFullYear() === year && quarterList.includes(today.getMonth());
+        style.today = today.getFullYear() === year && quarterList.includes(today.getMonth() + 1);
         style.current = arrayFindIndex(coerceTruthyValueToArray(this.value), date => date.getFullYear() === year && quarterList.includes(date.getMonth())) >= 0;
         // console.log('quarterList: ', quarterList);
         return style;

@@ -136,7 +136,6 @@ const HAVE_TRIGGER_TYPES = [
 ];
 const DATE_FORMATTER = function(value, format) {
   if (format === 'timestamp') return value.getTime();
-  // console.log('value: ', value);
   return formatDate(value, format);
 };
 const DATE_PARSER = function(text, format) {
@@ -414,7 +413,6 @@ export default {
 
   watch: {
     pickerVisible(val) {
-      console.log('val: ', val);
       if (this.readonly || this.pickerDisabled) return;
       if (val) {
         this.showPicker();
@@ -513,8 +511,12 @@ export default {
 
     displayValue() {
       const formattedValue = formatAsFormatAndType(this.parsedValue, this.format, this.type, this.rangeSeparator);
-      if (this.type === 'quarter') {
-        console.log('this.parsedValue, this.format, this.type, this.rangeSeparator: ', formattedValue, this.parsedValue, this.format, this.type, this.rangeSeparator);
+      // if (this.type === 'month') {
+      //   console.log('this.parsedValue, this.format, this.type, this.rangeSeparator: ', formattedValue, this.parsedValue, this.type);
+
+      // }
+      if (this.type === 'quarter' && this.parsedValue) {
+        console.log('this.parsedValue, this.format, this.type, this.rangeSeparator: ', formattedValue, this.parsedValue, this.type);
         return formatDateQuarter(this.parsedValue, this.format);
       }
       if (Array.isArray(this.userInput)) {
@@ -740,8 +742,6 @@ export default {
 
     handleFocus() {
       const type = this.type;
-      console.log('this.pickerVisible: ', this.pickerVisible);
-      console.log('HAVE_TRIGGER_TYPES.indexOf(type): ', HAVE_TRIGGER_TYPES.indexOf(type));
       if (HAVE_TRIGGER_TYPES.indexOf(type) !== -1 && !this.pickerVisible) {
         this.pickerVisible = true;
       }
@@ -803,7 +803,6 @@ export default {
 
     handleRangeClick() {
       const type = this.type;
-      console.log('type: ', type);
 
       if (HAVE_TRIGGER_TYPES.indexOf(type) !== -1 && !this.pickerVisible) {
         this.pickerVisible = true;

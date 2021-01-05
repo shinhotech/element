@@ -218,8 +218,6 @@
       },
 
       selectionMode(newVal) {
-        console.log('newVal: ', newVal);
-        console.log('this.currentView: ', this.currentView);
         if (newVal === 'month') {
           /* istanbul ignore next */
           if (this.currentView !== 'year' || this.currentView !== 'month') {
@@ -228,7 +226,7 @@
         } else if (newVal === 'dates') {
           this.currentView = 'date';
         }
-        console.log('this.currentView: ', this.currentView);
+        // console.log('this.currentView: ', this.currentView);
       }
     },
 
@@ -415,7 +413,6 @@
       },
 
       resetView() {
-        console.log('this.selectionMode: ', this.selectionMode);
         if (this.selectionMode === 'month') {
           this.currentView = 'month';
         } else if (this.selectionMode === 'year') {

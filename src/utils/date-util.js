@@ -76,7 +76,6 @@ export const formatDateQuarter = function(date, format) {
           currentQuarter = quarterItemKey;
         }
       });
-      console.log('currentQuarter: ', currentQuarter);
       return currentQuarter;
     }
   };
