@@ -82,8 +82,8 @@ import CascaderPanel from '../packages/cascader-panel/index.js';
 import Avatar from '../packages/avatar/index.js';
 import Drawer from '../packages/drawer/index.js';
 import Popconfirm from '../packages/popconfirm/index.js';
-import locale from 'element-ui/src/locale';
-import CollapseTransition from 'element-ui/src/transitions/collapse-transition';
+import locale from 'shinho-sh-ui/src/locale';
+import CollapseTransition from 'shinho-sh-ui/src/transitions/collapse-transition';
 
 const components = [
   Pagination,
@@ -198,7 +198,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  version: '2.13.3-alphe.3',
+  version: '2.13.3-alphe',
   locale: locale.use,
   i18n: locale.i18n,
   install,

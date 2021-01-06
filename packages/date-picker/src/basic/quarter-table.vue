@@ -41,9 +41,9 @@
 </template>
 
 <script>
-  import { hasClass } from 'element-ui/src/utils/dom';
-  // import { range, getDayCountOfMonth, nextDate } from 'element-ui/src/utils/date-util';
-  import { arrayFindIndex, coerceTruthyValueToArray } from 'element-ui/src/utils/util';
+  import { hasClass } from 'shinho-sh-ui/src/utils/dom';
+  // import { range, getDayCountOfMonth, nextDate } from 'shinho-sh-ui/src/utils/date-util';
+  import { arrayFindIndex, coerceTruthyValueToArray } from 'shinho-sh-ui/src/utils/util';
   const datesInMonth = (year, month) => {
     // const numOfDays = getDayCountOfMonth(year, month);
     // console.log('numOfDays: ', numOfDays);

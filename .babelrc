@@ -29,9 +29,9 @@
       ],
       "plugins": [
         ["module-resolver", {
-          "root": ["element-ui"],
+          "root": ["shinho-sh-ui"],
           "alias": {
-            "element-ui/src": "element-ui/lib"
+            "shinho-sh-ui/src": "shinho-sh-ui/lib"
           }
         }]
       ]

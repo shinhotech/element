@@ -17,16 +17,16 @@
 <script>
 import CascaderMenu from './cascader-menu';
 import Store from './store';
-import merge from 'element-ui/src/utils/merge';
-import AriaUtils from 'element-ui/src/utils/aria-utils';
-import scrollIntoView from 'element-ui/src/utils/scroll-into-view';
+import merge from 'shinho-sh-ui/src/utils/merge';
+import AriaUtils from 'shinho-sh-ui/src/utils/aria-utils';
+import scrollIntoView from 'shinho-sh-ui/src/utils/scroll-into-view';
 import {
   noop,
   coerceTruthyValueToArray,
   isEqual,
   isEmpty,
   valueEquals
-} from 'element-ui/src/utils/util';
+} from 'shinho-sh-ui/src/utils/util';
 
 const { keys: KeyCode } = AriaUtils;
 const DefaultProps = {
