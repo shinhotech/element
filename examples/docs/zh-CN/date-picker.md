@@ -117,10 +117,14 @@
   <div class="block">
     <span class="demonstration">季度</span>
     <el-date-picker
-      type="quarter"
-      format="yyyy-MM"
       v-model="value5"
-      placeholder="选择季度">
+      type="quarter"
+      :picker-options="pickerOptions"
+      format="yyyy-QQ-MM"
+      value-format="yyyy-MM"
+      placeholder="选择季度"
+      @change="handleChange"
+    >
     </el-date-picker>
   </div>
 </div>
@@ -130,16 +134,29 @@
       return {
         pickerOptions: {
           disabledDate(time) {
-            console.log('time.getTime() > Date.now(): ', time.getTime() > Date.now());
+            // console.log('time.getTime() > Date.now(): ', time.getTime() > Date.now());
             return time.getTime() > Date.now();
           }
         },
         value1: '',
-        value2: ['2020-03'],
+        value2: '2020-03',
         value3: '',
         value4: '',
-        value5: '2020-05'
+        value5: new Date('2020-10')
       };
+    },
+    watch: {
+      value5 () {
+        console.log(this.value5, 'value5')
+      },
+      value2 () {
+        console.log(this.value2, 'value2')
+      }
+    },
+    methods: {
+      handleChange (date) {
+        console.log('date: ', date);
+      }
     }
   };
 </script>

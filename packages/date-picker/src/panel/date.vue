@@ -63,7 +63,7 @@
               class="el-picker-panel__icon-btn el-date-picker__prev-btn el-icon-arrow-left">
             </button>
             <span
-              @click="currentView !== 'quarter' && showYearPicker"
+              @click="showYearPicker"
               role="button"
               class="el-date-picker__header-label">{{ yearLabel }}</span>
             <span
@@ -274,7 +274,6 @@
       },
 
       showYearPicker() {
-        console.log('showYearPicker: ', this.currentView);
         this.currentView = 'year';
       },
 
@@ -339,7 +338,7 @@
       handleMonthPick(month) {
         if (this.selectionMode === 'month') {
           this.date = modifyDate(this.date, this.year, month, 1);
-          console.log('this.date: ', this.date);
+          // console.log('this.date: ', this.date);
           this.emit(this.date);
         } else {
           this.date = changeYearMonthAndClampDate(this.date, this.year, month);
@@ -370,18 +369,17 @@
       handleYearPick(year) {
         if (this.selectionMode === 'year') {
           this.date = modifyDate(this.date, year, 0, 1);
-          console.log('this.date: ', this.date);
           this.emit(this.date);
+        } else if (this.selectionMode === 'quarter') {
+          this.currentView = 'quarter';
         } else {
           this.date = changeYearMonthAndClampDate(this.date, year, this.month);
           // TODO: should emit intermediate value ??
-          // this.emit(this.date, true);
           this.currentView = 'month';
         }
       },
 
       handleQuraterPick(quarter) {
-        console.log('this.selectionMode: ', this.selectionMode);
         if (this.selectionMode === 'quarter') {
           this.date = modifyDate(this.date, this.year, quarter, 1);
           console.log('this.date: ', this.date);

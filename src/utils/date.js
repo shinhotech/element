@@ -33,14 +33,21 @@
    * @class fecha
    */
   var fecha = {};
-  var token = /d{1,4}|M{1,4}|yy(?:yy)?|S{1,3}|Do|ZZ|([HhMsDm])\1?|[aA]|"[^"]*"|'[^']*'/g;
+  var token = /d{1,4}|M{1,4}|yy(?:yy)?|S{1,3}|Do|ZZ|([HhMsDmQq])\1?|[aA]|"[^"]*"|'[^']*'/g;
   var twoDigits = '\\d\\d?';
   var threeDigits = '\\d{3}';
   var fourDigits = '\\d{4}';
   var word = '[^\\s]+';
   var literal = /\[([^]*?)\]/gm;
+  var quarterSet = {'Q1': [1, 2, 3], 'Q2': [4, 5, 6], 'Q3': [7, 8, 9], 'Q4': [10, 11, 12]};
   var noop = function () {
   };
+
+  function getQuarter (date) {
+    const month = date.getMonth() + 1;
+    let quarter = Math.ceil(month / 3);
+    return quarter
+  }
 
   function regexEscape(str) {
     return str.replace( /[|\\{()[^$+*?.-]/g, '\\$&');
@@ -108,6 +115,18 @@
     },
     dddd: function(dateObj, i18n) {
       return i18n.dayNames[dateObj.getDay()];
+    },
+    q: function (dateObj) {
+      return getQuarter(dateObj)
+    },
+    qq: function (dateObj) {
+      return 'Q' + getQuarter(dateObj)
+    },
+    Q: function (dateObj) {
+      return getQuarter(dateObj)
+    },
+    QQ: function (dateObj) {
+      return 'Q' + getQuarter(dateObj)
     },
     M: function(dateObj) {
       return dateObj.getMonth() + 1;
@@ -180,7 +199,14 @@
       d.day = parseInt(v, 10);
     }],
     M: [twoDigits, function (d, v) {
+      console.log('d, v: ', d, v);
       d.month = v - 1;
+    }],
+    Q: ['[(q|Q)\\w]+?[1-4]\\d?', function (d, v) {
+      const newV = v.toUpperCase()
+      if (quarterSet[newV] && quarterSet[newV][1]) {
+        d.month = quarterSet[newV][1]
+      }
     }],
     yy: [twoDigits, function (d, v) {
       var da = new Date(), cent = +('' + da.getFullYear()).substr(0, 2);
@@ -234,6 +260,9 @@
   parseFlags.mm = parseFlags.m;
   parseFlags.hh = parseFlags.H = parseFlags.HH = parseFlags.h;
   parseFlags.MM = parseFlags.M;
+  parseFlags.QQ = parseFlags.Q;
+  parseFlags.qq = parseFlags.Q;
+  parseFlags.q = parseFlags.Q;
   parseFlags.ss = parseFlags.s;
   parseFlags.A = parseFlags.a;
 
@@ -283,6 +312,7 @@
     const aaa = mask.replace(/@@@/g, function() {
       return literals.shift();
     });
+    console.log('aaa: ', aaa);
     
     // Inline literal values back into the formatted value
     return aaa;
@@ -325,13 +355,21 @@
         parseInfo.push(info[1]);
         return '(' + info[0] + ')';
       }
-
+      
       return $0;
     });
+    console.log('newFormat: ', newFormat);
     newFormat = newFormat.replace(/@@@/g, function() {
       return literals.shift();
     });
+    // // dateStr = '2020-Q3'
+    // // if (dateStr)
+    // console.log('newFormat: ', JSON.parse(JSON.stringify(newFormat)), JSON.parse(JSON.stringify(dateStr)), JSON.parse(JSON.stringify(literals)), JSON.parse(JSON.stringify(typeof dateStr)));
+    // console.log('newFormat: ', newFormat, dateStr, literals, typeof dateStr, dateStr.match(new RegExp(newFormat, 'i')));
+    // // var cc = String('2020-08').match(new RegExp('(\d{4})\-(\Q\d?)', 'i'));
+    // // console.log('cc: ', cc);
     var matches = dateStr.match(new RegExp(newFormat, 'i'));
+    console.log('matches: ', matches);
     if (!matches) {
       return null;
     }
@@ -346,7 +384,7 @@
     } else if (dateInfo.isPm === false && +dateInfo.hour === 12) {
       dateInfo.hour = 0;
     }
-
+    
     var date;
     if (dateInfo.timezoneOffset != null) {
       dateInfo.minute = +(dateInfo.minute || 0) - +dateInfo.timezoneOffset;
@@ -356,6 +394,7 @@
       date = new Date(dateInfo.year || today.getFullYear(), dateInfo.month || 0, dateInfo.day || 1,
         dateInfo.hour || 0, dateInfo.minute || 0, dateInfo.second || 0, dateInfo.millisecond || 0);
     }
+    // console.log('date: ', date);
     return date;
   };
 

@@ -86,7 +86,7 @@
 <script>
 import Vue from 'vue';
 import Clickoutside from 'shinho-sh-ui/src/utils/clickoutside';
-import { formatDate, formatDateQuarter, parseDate, isDateObject, getWeekNumber } from 'shinho-sh-ui/src/utils/date-util';
+import { formatDate, parseDate, isDateObject, getWeekNumber } from 'shinho-sh-ui/src/utils/date-util';
 import Popper from 'shinho-sh-ui/src/utils/vue-popper';
 import Emitter from 'shinho-sh-ui/src/mixins/emitter';
 import ElInput from 'shinho-sh-ui/packages/input';
@@ -109,7 +109,7 @@ const NewPopper = {
 const DEFAULT_FORMATS = {
   date: 'yyyy-MM-dd',
   month: 'yyyy-MM',
-  quarter: 'yyyy-MM',
+  quarter: 'yyyy-QQ',
   datetime: 'yyyy-MM-dd HH:mm:ss',
   time: 'HH:mm:ss',
   week: 'yyyywWW',
@@ -511,20 +511,13 @@ export default {
 
     displayValue() {
       const formattedValue = formatAsFormatAndType(this.parsedValue, this.format, this.type, this.rangeSeparator);
-      // if (this.type === 'month') {
-      //   console.log('this.parsedValue, this.format, this.type, this.rangeSeparator: ', formattedValue, this.parsedValue, this.type);
-
-      // }
-      if (this.type === 'quarter' && this.parsedValue) {
-        console.log('this.parsedValue, this.format, this.type, this.rangeSeparator: ', formattedValue, this.parsedValue, this.type);
-        return formatDateQuarter(this.parsedValue, this.format);
-      }
       if (Array.isArray(this.userInput)) {
         return [
           this.userInput[0] || (formattedValue && formattedValue[0]) || '',
           this.userInput[1] || (formattedValue && formattedValue[1]) || ''
         ];
       } else if (this.userInput !== null) {
+        console.log('this.userInput: ', this.userInput);
         return this.userInput;
       } else if (formattedValue) {
         return this.type === 'dates'
@@ -882,7 +875,6 @@ export default {
 
       this.picker.$on('dodestroy', this.doDestroy);
       this.picker.$on('pick', (date = '', visible = false) => {
-        console.log('date: ', date);
         this.userInput = null;
         this.pickerVisible = this.picker.visible = visible;
         this.emitInput(date);
