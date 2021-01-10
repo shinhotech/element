@@ -435,6 +435,7 @@
       type="quarter"
       format="yyyy-Q"
       v-model="value5"
+      clearable
       :picker-options="pickerOptions"
       placeholder="选择季度">
     </el-date-picker>
@@ -449,7 +450,7 @@
             return time.getTime() > Date.now();
           }
         },
-        value5: '2020-05'
+        value5: '2019-2'
       };
     }
   };

@@ -551,6 +551,66 @@ describe('DatePicker', () => {
         }, DELAY);
       }, DELAY);
     });
+    it('accepts quarter', done => {
+      vm = createVue({
+        template: `
+          <el-date-picker
+            ref="compo"
+            v-model="value"
+            type="quarter"
+            format="yyyy-Q"
+            value-format="Q yyyy" />`,
+        data() {
+          return {
+            value: '2 2019'
+          };
+        }
+      }, true);
+      const input = vm.$refs.compo.$el.querySelector('input');
+      console.log('input: ', input.value);
+      expect(input.value).to.equal('2019-2');
+      expect(vm.$refs.compo.parsedValue).to.be.an.instanceof(Date);
+      input.focus();
+      setTimeout(_ => {
+        const date = vm.$refs.compo.picker.date;
+        expect(date.getFullYear()).to.equal(2019);
+        expect(date.getMonth()).to.equal(3);
+        vm.$refs.compo.picker.$el.querySelector('.el-date-table .current').click();
+        setTimeout(_ => {
+          expect(input.value).to.equal('2019-1');
+          done();
+        }, DELAY);
+      }, DELAY);
+    });
+
+    it('translates format to value-format quarter', done => {
+      vm = createVue({
+        template: `
+          <el-date-picker
+            ref="compo"
+            v-model="value"
+            type="quarter"
+            format="yyyy-QQ"
+            value-format="QQ yyyy" />`,
+        data() {
+          return {
+            value: ''
+          };
+        }
+      }, true);
+      const input = vm.$refs.compo.$el.querySelector('input');
+      input.focus();
+      setTimeout(_ => {
+        input.value = '2019-01';
+        triggerEvent(input, 'input');
+        keyDown(input, ENTER);
+        setTimeout(_ => {
+          expect(vm.value).to.equal('Q1 2019');
+          done();
+        }, DELAY);
+      }, DELAY);
+
+    });
 
     it('translates format to value-format', done => {
       vm = createVue({
