@@ -2,8 +2,8 @@
  * @Descripttion: 季度组件面板
  * @Author: 19080088
  * @Date: 2020-11-24 10:49:51
- * @LastEditors: 19080088
- * @LastEditTime: 2021-01-07 16:26:41
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-01-10 17:07:54
 -->
 <template>
   <table @click="handleQuraterTableClick" class="el-quarter-table">
@@ -12,13 +12,13 @@
         <td class="available" :class="getCellStyle([1, 2, 3])">
           <a class="cell">
             <p class="quarter-value">Q1</p>
-            <p>1月 - 3月</p>
+            <p>{{ t('el.datepicker.months.' + months[0]) }} - {{ t('el.datepicker.months.' + months[2]) }}</p>
           </a>
         </td>
         <td  td class="available" :class="getCellStyle([4, 5, 6])">
           <a class="cell">
             <p class="quarter-value">Q2</p>
-            <p>4月 - 6月</p>
+            <p>{{ t('el.datepicker.months.' + months[3]) }} - {{ t('el.datepicker.months.' + months[5]) }}</p>
           </a>
         </td>
       </tr>
@@ -26,13 +26,13 @@
         <td class="available" :class="getCellStyle([7, 8, 9])">
           <a class="cell">
             <p class="quarter-value">Q3</p>
-            <p>7月 - 9月</p>
+            <p>{{ t('el.datepicker.months.' + months[6]) }} - {{ t('el.datepicker.months.' + months[8]) }}</p>
           </a>
         </td>
         <td class="available" :class="getCellStyle([10, 11, 12])">
           <a class="cell">
             <p class="quarter-value">Q4</p>
-            <p>10月 - 12月</p>
+            <p>{{ t('el.datepicker.months.' + months[9]) }} - {{ t('el.datepicker.months.' + months[11]) }}</p>
           </a>
         </td>
       </tr>
@@ -42,6 +42,7 @@
 
 <script>
   import { hasClass } from 'shinho-sh-ui/src/utils/dom';
+  import Locale from 'shinho-sh-ui/src/mixins/locale';
   import { arrayFindIndex, coerceTruthyValueToArray } from 'shinho-sh-ui/src/utils/util';
   const datesInMonth = (year, month) => {
     const firstDay = new Date(year, month, 1);
@@ -54,6 +55,12 @@
       date: {},
       value: {}
     },
+    data() {
+      return {
+        months: ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec']
+      };
+    },
+    mixins: [Locale],
     methods: {
       getCellStyle(quarterList) {
         const style = {};

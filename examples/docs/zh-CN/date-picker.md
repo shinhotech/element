@@ -70,7 +70,7 @@
 
 ###  其他日期单位
 
-通过扩展基础的日期选择，可以选择周、月、年或多个日期
+通过扩展基础的日期选择，可以选择周、月、季、年或多个日期
 
 :::demo
 ```html
@@ -134,7 +134,6 @@
       return {
         pickerOptions: {
           disabledDate(time) {
-            // console.log('time.getTime() > Date.now(): ', time.getTime() > Date.now());
             return time.getTime() > Date.now();
           }
         },
@@ -319,6 +318,10 @@
 | `yyyy` | 年 | | 2017 |
 | `M`  | 月 | 不补0 | 1 |
 | `MM` | 月 | | 01 |
+| `Q`  | 季 | 仅周选择器的 format 可用;不补Q | 1 |
+| `QQ`  | 季 | 仅周选择器的 format 可用| Q1 |
+| `q`  | 季 | 仅周选择器的 format 可用;不补Q | 1 |
+| `qq`  | 季 | 仅周选择器的 format 可用 | Q1 |
 | `W`  | 周 | 仅周选择器的 `format` 可用；不补0 | 1 |
 | `WW` | 周 | 仅周选择器的 `format` 可用 | 01 |
 | `d`  | 日 | 不补0 | 2 |
@@ -420,9 +423,8 @@
 
 ### quarter 季度组件
 
-当`type="quarter"`时，显示季度组件，`defaultValue`必须到月份，
-示例如：`format="yyyy-MM"` 并且 `:value="2020-01"`来处理。
-- 另一种解决方法： 传入`2020-Q1` 其中的`Q1/Q2/Q3/Q4`要写死
+通过扩展基础的日期选择，可以`type='quarter'`使用季度组件，`defaultValue`不能传入`2020-Q1`，必须要传入能通过`new Date('xxxx-xx')`的格式。如下所示：
+
 
 :::demo
 ```html
@@ -431,7 +433,7 @@
     <span class="demonstration">季度</span>
     <el-date-picker
       type="quarter"
-      format="yyyy-MM"
+      format="yyyy-Q"
       v-model="value5"
       :picker-options="pickerOptions"
       placeholder="选择季度">

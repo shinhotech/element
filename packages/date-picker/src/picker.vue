@@ -517,7 +517,7 @@ export default {
           this.userInput[1] || (formattedValue && formattedValue[1]) || ''
         ];
       } else if (this.userInput !== null) {
-        console.log('this.userInput: ', this.userInput);
+        // console.log('this.userInput: ', this.userInput);
         return this.userInput;
       } else if (formattedValue) {
         return this.type === 'dates'

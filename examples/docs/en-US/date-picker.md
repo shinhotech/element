@@ -111,17 +111,49 @@ You can choose week, month, year or multiple dates by extending the standard dat
       placeholder="Pick one or more dates">
     </el-date-picker>
   </div>
+  <div class="block">
+    <span class="demonstration">quarter</span>
+    <el-date-picker
+      v-model="value5"
+      type="quarter"
+      :picker-options="pickerOptions"
+      format="yyyy-QQ-MM"
+      value-format="yyyy-MM"
+      placeholder="选择季度"
+      @change="handleChange"
+    >
+    </el-date-picker>
+  </div>
 </div>
 
 <script>
   export default {
     data() {
       return {
+        pickerOptions: {
+          disabledDate(time) {
+            return time.getTime() > Date.now();
+          }
+        },
         value1: '',
-        value2: '',
+        value2: '2020-03',
         value3: '',
-        value4: ''
+        value4: '',
+        value5: new Date('2020-10')
       };
+    },
+    watch: {
+      value5 () {
+        console.log(this.value5, 'value5')
+      },
+      value2 () {
+        console.log(this.value2, 'value2')
+      }
+    },
+    methods: {
+      handleChange (date) {
+        console.log('date: ', date);
+      }
     }
   };
 </script>
@@ -331,6 +363,10 @@ Pay attention to capitalization
 | `MM` | month | | 01 |
 | `MMM` | month | | Jan |
 | `MMMM` | month | | January |
+| `Q`  | quarter | only for week picker's `format`; no leading Q | 1 |
+| `QQ`  | quarter | only for week picker's `format` | Q1 |
+| `q`  | quarter | only for week picker's `format`; no leading Q | 1 |
+| `qq`  | quarter | only for week picker's `format` | Q1 |
 | `W`  | week | only for week picker's `format`; no leading 0 | 1 |
 | `WW` | week | only for week picker's `format`| 01 |
 | `d`  | day | no leading 0 | 2 |
@@ -423,6 +459,42 @@ When picking a date range, you can assign the time part for start date and end d
     data() {
       return {
         value: ''
+      };
+    }
+  };
+</script>
+```
+:::
+
+### quarter
+
+If user hasn't picked a date, shows today's calendar by default. You can use `type='quarter'`to set another date ，`defaultValue` don’t use `2020-Q1`，You must pass in a format that can pass' new date ('xxxx XX ')'。As follows：
+
+
+:::demo
+```html
+<div class="container">
+  <div class="block">
+    <span class="demonstration">quarter</span>
+    <el-date-picker
+      type="quarter"
+      format="yyyy-Q"
+      v-model="value5"
+      :picker-options="pickerOptions"
+      placeholder="选择季度">
+    </el-date-picker>
+  </div>
+</div>
+<script>
+  export default {
+    data() {
+      return {
+        pickerOptions: {
+          disabledDate(time) {
+            return time.getTime() > Date.now();
+          }
+        },
+        value5: '2020-05'
       };
     }
   };

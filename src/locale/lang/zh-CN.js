@@ -34,6 +34,7 @@ export default {
       month11: '11 月',
       month12: '12 月',
       // week: '周次',
+      month: '月',
       weeks: {
         sun: '日',
         mon: '一',

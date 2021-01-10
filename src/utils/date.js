@@ -199,10 +199,15 @@
       d.day = parseInt(v, 10);
     }],
     M: [twoDigits, function (d, v) {
-      console.log('d, v: ', d, v);
       d.month = v - 1;
     }],
-    Q: ['[(q|Q)\\w]+?[1-4]\\d?', function (d, v) {
+    Q: ['[1-4]\\d?', function (d, v) {
+      const newV = ('Q' + v).toUpperCase()
+      if (quarterSet[newV] && quarterSet[newV][1]) {
+        d.month = quarterSet[newV][1]
+      }
+    }],
+    QQ: ['[(q|Q)\\w]+?[1-4]\\d?', function (d, v) {
       const newV = v.toUpperCase()
       if (quarterSet[newV] && quarterSet[newV][1]) {
         d.month = quarterSet[newV][1]
@@ -260,8 +265,9 @@
   parseFlags.mm = parseFlags.m;
   parseFlags.hh = parseFlags.H = parseFlags.HH = parseFlags.h;
   parseFlags.MM = parseFlags.M;
-  parseFlags.QQ = parseFlags.Q;
-  parseFlags.qq = parseFlags.Q;
+  parseFlags.QQ = parseFlags.QQ;
+  parseFlags.qq = parseFlags.QQ;
+  parseFlags.Q = parseFlags.Q;
   parseFlags.q = parseFlags.Q;
   parseFlags.ss = parseFlags.s;
   parseFlags.A = parseFlags.a;
@@ -312,7 +318,6 @@
     const aaa = mask.replace(/@@@/g, function() {
       return literals.shift();
     });
-    console.log('aaa: ', aaa);
     
     // Inline literal values back into the formatted value
     return aaa;
@@ -358,18 +363,10 @@
       
       return $0;
     });
-    console.log('newFormat: ', newFormat);
     newFormat = newFormat.replace(/@@@/g, function() {
       return literals.shift();
     });
-    // // dateStr = '2020-Q3'
-    // // if (dateStr)
-    // console.log('newFormat: ', JSON.parse(JSON.stringify(newFormat)), JSON.parse(JSON.stringify(dateStr)), JSON.parse(JSON.stringify(literals)), JSON.parse(JSON.stringify(typeof dateStr)));
-    // console.log('newFormat: ', newFormat, dateStr, literals, typeof dateStr, dateStr.match(new RegExp(newFormat, 'i')));
-    // // var cc = String('2020-08').match(new RegExp('(\d{4})\-(\Q\d?)', 'i'));
-    // // console.log('cc: ', cc);
     var matches = dateStr.match(new RegExp(newFormat, 'i'));
-    console.log('matches: ', matches);
     if (!matches) {
       return null;
     }
@@ -394,7 +391,6 @@
       date = new Date(dateInfo.year || today.getFullYear(), dateInfo.month || 0, dateInfo.day || 1,
         dateInfo.hour || 0, dateInfo.minute || 0, dateInfo.second || 0, dateInfo.millisecond || 0);
     }
-    // console.log('date: ', date);
     return date;
   };
 
