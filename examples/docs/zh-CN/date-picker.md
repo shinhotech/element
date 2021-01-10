@@ -432,6 +432,7 @@
   <div class="block">
     <span class="demonstration">季度</span>
     <el-date-picker
+      ref="compo"
       type="quarter"
       format="yyyy-Q"
       v-model="value5"

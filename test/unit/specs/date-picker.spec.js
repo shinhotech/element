@@ -567,19 +567,14 @@ describe('DatePicker', () => {
         }
       }, true);
       const input = vm.$refs.compo.$el.querySelector('input');
-      console.log('input: ', input.value);
       expect(input.value).to.equal('2019-2');
       expect(vm.$refs.compo.parsedValue).to.be.an.instanceof(Date);
       input.focus();
       setTimeout(_ => {
         const date = vm.$refs.compo.picker.date;
         expect(date.getFullYear()).to.equal(2019);
-        expect(date.getMonth()).to.equal(3);
-        vm.$refs.compo.picker.$el.querySelector('.el-date-table .current').click();
-        setTimeout(_ => {
-          expect(input.value).to.equal('2019-1');
-          done();
-        }, DELAY);
+        expect(date.getMonth()).to.equal(5);
+        done();
       }, DELAY);
     });
 
