@@ -1,6 +1,6 @@
 {
   "name": "shinho-sh-ui",
-  "version": "2.13.3-alphe.4",
+  "version": "2.13.3-alphe.6",
   "description": "A Component Library for Vue.js.",
   "main": "lib/shinho-sh-ui.common.js",
   "files": [
