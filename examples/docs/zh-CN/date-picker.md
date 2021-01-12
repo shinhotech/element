@@ -119,7 +119,6 @@
     <el-date-picker
       v-model="value5"
       type="quarter"
-      :picker-options="pickerOptions"
       format="yyyy-QQ-MM"
       value-format="yyyy-MM"
       placeholder="选择季度"
@@ -134,6 +133,7 @@
       return {
         pickerOptions: {
           disabledDate(time) {
+            console.log('time: ', time);
             return time.getTime() > Date.now();
           }
         },
@@ -318,10 +318,10 @@
 | `yyyy` | 年 | | 2017 |
 | `M`  | 月 | 不补0 | 1 |
 | `MM` | 月 | | 01 |
-| `Q`  | 季 | 仅周选择器的 format 可用;不补Q | 1 |
-| `QQ`  | 季 | 仅周选择器的 format 可用| Q1 |
-| `q`  | 季 | 仅周选择器的 format 可用;不补Q | 1 |
-| `qq`  | 季 | 仅周选择器的 format 可用 | Q1 |
+| `Q`  | 季 | 仅季选择器的 format 可用;不补Q | 1 |
+| `QQ`  | 季 | 仅季选择器的 format 可用| Q1 |
+| `q`  | 季 | 仅季选择器的 format 可用;不补Q | 1 |
+| `qq`  | 季 | 仅季选择器的 format 可用 | Q1 |
 | `W`  | 周 | 仅周选择器的 `format` 可用；不补0 | 1 |
 | `WW` | 周 | 仅周选择器的 `format` 可用 | 01 |
 | `d`  | 日 | 不补0 | 2 |

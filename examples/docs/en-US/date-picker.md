@@ -363,10 +363,10 @@ Pay attention to capitalization
 | `MM` | month | | 01 |
 | `MMM` | month | | Jan |
 | `MMMM` | month | | January |
-| `Q`  | quarter | only for week picker's `format`; no leading Q | 1 |
-| `QQ`  | quarter | only for week picker's `format` | Q1 |
-| `q`  | quarter | only for week picker's `format`; no leading Q | 1 |
-| `qq`  | quarter | only for week picker's `format` | Q1 |
+| `Q`  | quarter | only for quarter picker's `format`; no leading Q | 1 |
+| `QQ`  | quarter | only for quarter picker's `format` | Q1 |
+| `q`  | quarter | only for quarter picker's `format`; no leading Q | 1 |
+| `qq`  | quarter | only for quarter picker's `format` | Q1 |
 | `W`  | week | only for week picker's `format`; no leading 0 | 1 |
 | `WW` | week | only for week picker's `format`| 01 |
 | `d`  | day | no leading 0 | 2 |
