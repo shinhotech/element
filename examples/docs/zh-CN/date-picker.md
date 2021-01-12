@@ -434,7 +434,7 @@
     <el-date-picker
       ref="compo"
       type="quarter"
-      format="yyyy-Q"
+      format="yyyy-QQ"
       v-model="value5"
       clearable
       :picker-options="pickerOptions"

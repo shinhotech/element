@@ -203,14 +203,14 @@
     }],
     Q: ['[1-4]\\d?', function (d, v) {
       const newV = ('Q' + v).toUpperCase()
-      if (quarterSet[newV] && quarterSet[newV][1]) {
-        d.month = quarterSet[newV][1]
+      if (quarterSet[newV] && quarterSet[newV][0]) {
+        d.month = quarterSet[newV][0] - 1
       }
     }],
     QQ: ['[(q|Q)\\w]+?[1-4]\\d?', function (d, v) {
       const newV = v.toUpperCase()
-      if (quarterSet[newV] && quarterSet[newV][1]) {
-        d.month = quarterSet[newV][1]
+      if (quarterSet[newV] && quarterSet[newV][0]) {
+        d.month = quarterSet[newV][0] - 1
       }
     }],
     yy: [twoDigits, function (d, v) {
@@ -390,7 +390,7 @@
     } else {
       date = new Date(dateInfo.year || today.getFullYear(), dateInfo.month || 0, dateInfo.day || 1,
         dateInfo.hour || 0, dateInfo.minute || 0, dateInfo.second || 0, dateInfo.millisecond || 0);
-    }
+      }
     return date;
   };
 

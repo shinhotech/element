@@ -369,6 +369,7 @@
           this.emit(this.date);
         } else if (this.selectionMode === 'quarter') {
           this.currentView = 'quarter';
+          this.date = changeYearMonthAndClampDate(this.date, year, this.month);
         } else {
           this.date = changeYearMonthAndClampDate(this.date, year, this.month);
           // TODO: should emit intermediate value ??
