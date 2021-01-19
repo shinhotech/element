@@ -1,4 +1,14 @@
 ## Changelog
+
+### 2.15.1
+
+*2021-01-20*
+
+#### Add
+
+- DatePicker
+  - add type quarter
+
 ### 2.15.0
 
 *2021-01-15*
