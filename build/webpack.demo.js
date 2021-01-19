@@ -12,14 +12,14 @@ const config = require('./config');
 
 const isProd = process.env.NODE_ENV === 'production';
 const isPlay = !!process.env.PLAY_ENV;
-
+const outputPath = process.env.DOCS ? './docs' : './examples/shinho-sh-ui/';
 const webpackConfig = {
   mode: process.env.NODE_ENV,
   entry: isProd ? {
     docs: './examples/entry.js'
   } : (isPlay ? './examples/play.js' : './examples/entry.js'),
   output: {
-    path: path.resolve(process.cwd(), './examples/shinho-sh-ui/'),
+    path: path.resolve(process.cwd(), outputPath),
     publicPath: process.env.CI_ENV || '',
     filename: '[name].[hash:7].js',
     chunkFilename: isProd ? '[name].[hash:7].js' : '[name].js'
