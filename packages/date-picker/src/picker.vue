@@ -85,12 +85,12 @@
 
 <script>
 import Vue from 'vue';
-import Clickoutside from 'element-ui/src/utils/clickoutside';
-import { formatDate, parseDate, isDateObject, getWeekNumber } from 'element-ui/src/utils/date-util';
-import Popper from 'element-ui/src/utils/vue-popper';
-import Emitter from 'element-ui/src/mixins/emitter';
-import ElInput from 'element-ui/packages/input';
-import merge from 'element-ui/src/utils/merge';
+import Clickoutside from 'shinho-sh-ui/src/utils/clickoutside';
+import { formatDate, parseDate, isDateObject, getWeekNumber } from 'shinho-sh-ui/src/utils/date-util';
+import Popper from 'shinho-sh-ui/src/utils/vue-popper';
+import Emitter from 'shinho-sh-ui/src/mixins/emitter';
+import ElInput from 'shinho-sh-ui/packages/input';
+import merge from 'shinho-sh-ui/src/utils/merge';
 
 const NewPopper = {
   props: {
@@ -109,6 +109,7 @@ const NewPopper = {
 const DEFAULT_FORMATS = {
   date: 'yyyy-MM-dd',
   month: 'yyyy-MM',
+  quarter: 'yyyy-QQ',
   datetime: 'yyyy-MM-dd HH:mm:ss',
   time: 'HH:mm:ss',
   week: 'yyyywWW',
@@ -126,6 +127,7 @@ const HAVE_TRIGGER_TYPES = [
   'week',
   'month',
   'year',
+  'quarter',
   'daterange',
   'monthrange',
   'timerange',
@@ -228,6 +230,10 @@ const TYPE_VALUE_RESOLVER_MAP = {
     parser: DATE_PARSER
   },
   year: {
+    formatter: DATE_FORMATTER,
+    parser: DATE_PARSER
+  },
+  quarter: {
     formatter: DATE_FORMATTER,
     parser: DATE_PARSER
   },
@@ -487,6 +493,8 @@ export default {
         return 'month';
       } else if (this.type === 'year') {
         return 'year';
+      } else if (this.type === 'quarter') {
+        return 'quarter';
       } else if (this.type === 'dates') {
         return 'dates';
       }
@@ -509,6 +517,7 @@ export default {
           this.userInput[1] || (formattedValue && formattedValue[1]) || ''
         ];
       } else if (this.userInput !== null) {
+        // console.log('this.userInput: ', this.userInput);
         return this.userInput;
       } else if (formattedValue) {
         return this.type === 'dates'
@@ -726,7 +735,6 @@ export default {
 
     handleFocus() {
       const type = this.type;
-
       if (HAVE_TRIGGER_TYPES.indexOf(type) !== -1 && !this.pickerVisible) {
         this.pickerVisible = true;
       }

@@ -107,6 +107,14 @@
               :date="date"
               :disabled-date="disabledDate">
             </year-table>
+            <quarter-table
+              v-show="currentView === 'quarter'"
+              @pick="handleQuraterPick"
+              :value="value"
+              :default-value="defaultValue ? new Date(defaultValue) : null"
+              :date="date"
+              :disabled-date="disabledDate">
+            </quarter-table>
             <month-table
               v-show="currentView === 'month'"
               @pick="handleMonthPick"
@@ -161,13 +169,14 @@
     extractDateFormat,
     extractTimeFormat,
     timeWithinRange
-  } from 'element-ui/src/utils/date-util';
-  import Clickoutside from 'element-ui/src/utils/clickoutside';
-  import Locale from 'element-ui/src/mixins/locale';
-  import ElInput from 'element-ui/packages/input';
-  import ElButton from 'element-ui/packages/button';
+  } from 'shinho-sh-ui/src/utils/date-util';
+  import Clickoutside from 'shinho-sh-ui/src/utils/clickoutside';
+  import Locale from 'shinho-sh-ui/src/mixins/locale';
+  import ElInput from 'shinho-sh-ui/packages/input';
+  import ElButton from 'shinho-sh-ui/packages/button';
   import TimePicker from './time';
   import YearTable from '../basic/year-table';
+  import QuarterTable from '../basic/quarter-table';
   import MonthTable from '../basic/month-table';
   import DateTable from '../basic/date-table';
 
@@ -358,11 +367,20 @@
         if (this.selectionMode === 'year') {
           this.date = modifyDate(this.date, year, 0, 1);
           this.emit(this.date);
+        } else if (this.selectionMode === 'quarter') {
+          this.currentView = 'quarter';
+          this.date = changeYearMonthAndClampDate(this.date, year, this.month);
         } else {
           this.date = changeYearMonthAndClampDate(this.date, year, this.month);
           // TODO: should emit intermediate value ??
-          // this.emit(this.date, true);
           this.currentView = 'month';
+        }
+      },
+
+      handleQuraterPick(quarter) {
+        if (this.selectionMode === 'quarter') {
+          this.date = modifyDate(this.date, this.year, quarter, 1);
+          this.emit(this.date);
         }
       },
 
@@ -394,6 +412,8 @@
           this.currentView = 'month';
         } else if (this.selectionMode === 'year') {
           this.currentView = 'year';
+        } else if (this.selectionMode === 'quarter') {
+          this.currentView = 'quarter';
         } else {
           this.currentView = 'date';
         }
@@ -500,7 +520,7 @@
     },
 
     components: {
-      TimePicker, YearTable, MonthTable, DateTable, ElInput, ElButton
+      TimePicker, YearTable, MonthTable, DateTable, ElInput, ElButton, QuarterTable
     },
 
     data() {

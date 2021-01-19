@@ -33,14 +33,21 @@
    * @class fecha
    */
   var fecha = {};
-  var token = /d{1,4}|M{1,4}|yy(?:yy)?|S{1,3}|Do|ZZ|([HhMsDm])\1?|[aA]|"[^"]*"|'[^']*'/g;
+  var token = /d{1,4}|M{1,4}|yy(?:yy)?|S{1,3}|Do|ZZ|([HhMsDmQq])\1?|[aA]|"[^"]*"|'[^']*'/g;
   var twoDigits = '\\d\\d?';
   var threeDigits = '\\d{3}';
   var fourDigits = '\\d{4}';
   var word = '[^\\s]+';
   var literal = /\[([^]*?)\]/gm;
+  var quarterSet = {'Q1': [1, 2, 3], 'Q2': [4, 5, 6], 'Q3': [7, 8, 9], 'Q4': [10, 11, 12]};
   var noop = function () {
   };
+
+  function getQuarter (date) {
+    const month = date.getMonth() + 1;
+    let quarter = Math.ceil(month / 3);
+    return quarter
+  }
 
   function regexEscape(str) {
     return str.replace( /[|\\{()[^$+*?.-]/g, '\\$&');
@@ -108,6 +115,18 @@
     },
     dddd: function(dateObj, i18n) {
       return i18n.dayNames[dateObj.getDay()];
+    },
+    q: function (dateObj) {
+      return getQuarter(dateObj)
+    },
+    qq: function (dateObj) {
+      return 'Q' + getQuarter(dateObj)
+    },
+    Q: function (dateObj) {
+      return getQuarter(dateObj)
+    },
+    QQ: function (dateObj) {
+      return 'Q' + getQuarter(dateObj)
     },
     M: function(dateObj) {
       return dateObj.getMonth() + 1;
@@ -182,6 +201,18 @@
     M: [twoDigits, function (d, v) {
       d.month = v - 1;
     }],
+    Q: ['[1-4]\\d?', function (d, v) {
+      const newV = ('Q' + v).toUpperCase()
+      if (quarterSet[newV] && quarterSet[newV][0]) {
+        d.month = quarterSet[newV][0] - 1
+      }
+    }],
+    QQ: ['[(q|Q)\\w]+?[1-4]\\d?', function (d, v) {
+      const newV = v.toUpperCase()
+      if (quarterSet[newV] && quarterSet[newV][0]) {
+        d.month = quarterSet[newV][0] - 1
+      }
+    }],
     yy: [twoDigits, function (d, v) {
       var da = new Date(), cent = +('' + da.getFullYear()).substr(0, 2);
       d.year = '' + (v > 68 ? cent - 1 : cent) + v;
@@ -234,6 +265,10 @@
   parseFlags.mm = parseFlags.m;
   parseFlags.hh = parseFlags.H = parseFlags.HH = parseFlags.h;
   parseFlags.MM = parseFlags.M;
+  parseFlags.QQ = parseFlags.QQ;
+  parseFlags.qq = parseFlags.QQ;
+  parseFlags.Q = parseFlags.Q;
+  parseFlags.q = parseFlags.Q;
   parseFlags.ss = parseFlags.s;
   parseFlags.A = parseFlags.a;
 
@@ -257,8 +292,8 @@
    * @param {string} mask Format of the date, i.e. 'mm-dd-yy' or 'shortDate'
    */
   fecha.format = function (dateObj, mask, i18nSettings) {
+    
     var i18n = i18nSettings || fecha.i18n;
-
     if (typeof dateObj === 'number') {
       dateObj = new Date(dateObj);
     }
@@ -270,7 +305,7 @@
     mask = fecha.masks[mask] || mask || fecha.masks['default'];
 
     var literals = [];
-
+    
     // Make literals inactive by replacing them with ??
     mask = mask.replace(literal, function($0, $1) {
       literals.push($1);
@@ -280,10 +315,12 @@
     mask = mask.replace(token, function ($0) {
       return $0 in formatFlags ? formatFlags[$0](dateObj, i18n) : $0.slice(1, $0.length - 1);
     });
-    // Inline literal values back into the formatted value
-    return mask.replace(/@@@/g, function() {
+    const aaa = mask.replace(/@@@/g, function() {
       return literals.shift();
     });
+    
+    // Inline literal values back into the formatted value
+    return aaa;
   };
 
   /**
@@ -301,6 +338,7 @@
     }
 
     format = fecha.masks[format] || format;
+    // 
 
     // Avoid regular expression denial of service, fail early for really long strings
     // https://www.owasp.org/index.php/Regular_expression_Denial_of_Service_-_ReDoS
@@ -315,13 +353,14 @@
       literals.push($1);
       return '@@@';
     });
+    // 
     var newFormat = regexEscape(format).replace(token, function ($0) {
       if (parseFlags[$0]) {
         var info = parseFlags[$0];
         parseInfo.push(info[1]);
         return '(' + info[0] + ')';
       }
-
+      
       return $0;
     });
     newFormat = newFormat.replace(/@@@/g, function() {
@@ -342,7 +381,7 @@
     } else if (dateInfo.isPm === false && +dateInfo.hour === 12) {
       dateInfo.hour = 0;
     }
-
+    
     var date;
     if (dateInfo.timezoneOffset != null) {
       dateInfo.minute = +(dateInfo.minute || 0) - +dateInfo.timezoneOffset;
@@ -351,7 +390,7 @@
     } else {
       date = new Date(dateInfo.year || today.getFullYear(), dateInfo.month || 0, dateInfo.day || 1,
         dateInfo.hour || 0, dateInfo.minute || 0, dateInfo.second || 0, dateInfo.millisecond || 0);
-    }
+      }
     return date;
   };
 

@@ -70,7 +70,7 @@
 
 ###  其他日期单位
 
-通过扩展基础的日期选择，可以选择周、月、年或多个日期
+通过扩展基础的日期选择，可以选择周、月、季、年或多个日期
 
 :::demo
 ```html
@@ -89,6 +89,7 @@
     <el-date-picker
       v-model="value2"
       type="month"
+      :picker-options="pickerOptions"
       placeholder="选择月">
     </el-date-picker>
   </div>
@@ -99,6 +100,7 @@
     <el-date-picker
       v-model="value3"
       type="year"
+      :picker-options="pickerOptions"
       placeholder="选择年">
     </el-date-picker>
   </div>
@@ -111,16 +113,50 @@
     </el-date-picker>
   </div>
 </div>
-
+<div class="container">
+  <div class="block">
+    <span class="demonstration">季度</span>
+    <el-date-picker
+      v-model="value5"
+      type="quarter"
+      format="yyyy-QQ-MM"
+      value-format="yyyy-MM"
+      :picker-options="pickerOptions"
+      placeholder="选择季度"
+      @change="handleChange"
+    >
+    </el-date-picker>
+  </div>
+</div>
 <script>
   export default {
     data() {
       return {
+        pickerOptions: {
+          disabledDate(time) {
+            // console.log('time: ', time);
+            return time.getTime() > Date.now();
+          }
+        },
         value1: '',
-        value2: '',
+        value2: '2020-03',
         value3: '',
-        value4: ''
+        value4: '',
+        value5: new Date('2020-10')
       };
+    },
+    watch: {
+      value5 () {
+        console.log(this.value5, 'value5')
+      },
+      value2 () {
+        console.log(this.value2, 'value2')
+      }
+    },
+    methods: {
+      handleChange (date) {
+        console.log('date: ', date);
+      }
     }
   };
 </script>
@@ -268,7 +304,6 @@
 ```
 :::
 
-
 ###  日期格式
 
 使用`format`指定输入框的格式；使用`value-format`指定绑定值的格式。
@@ -284,6 +319,10 @@
 | `yyyy` | 年 | | 2017 |
 | `M`  | 月 | 不补0 | 1 |
 | `MM` | 月 | | 01 |
+| `Q`  | 季 | 仅季选择器的 format 可用;不补Q | 1 |
+| `QQ`  | 季 | 仅季选择器的 format 可用| Q1 |
+| `q`  | 季 | 仅季选择器的 format 可用;不补Q | 1 |
+| `qq`  | 季 | 仅季选择器的 format 可用 | Q1 |
 | `W`  | 周 | 仅周选择器的 `format` 可用；不补0 | 1 |
 | `WW` | 周 | 仅周选择器的 `format` 可用 | 01 |
 | `d`  | 日 | 不补0 | 2 |
@@ -383,6 +422,45 @@
 ```
 :::
 
+### quarter 季度组件
+
+通过扩展基础的日期选择，可以`type='quarter'`使用季度组件，`defaultValue`不能传入`2020-Q1`，必须要传入能通过`new Date('xxxx-xx')`的格式。如下所示：
+
+
+:::demo
+```html
+<div class="container">
+  <div class="block">
+    <span class="demonstration">季度</span>
+    <el-date-picker
+      ref="compo"
+      type="quarter"
+      format="yyyy-QQ"
+      v-model="value5"
+      clearable
+      :picker-options="pickerOptions"
+      placeholder="选择季度">
+    </el-date-picker>
+  </div>
+</div>
+<script>
+  export default {
+    data() {
+      return {
+        pickerOptions: {
+          disabledDate(time) {
+            return time.getTime() > Date.now();
+          }
+        },
+        value5: '2019-2'
+      };
+    }
+  };
+</script>
+```
+:::
+
+
 ### Attributes
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |
 |---------- |-------------- |---------- |--------------------------------  |-------- |
@@ -395,7 +473,7 @@
 | placeholder | 非范围选择时的占位内容 | string | — | — |
 | start-placeholder | 范围选择时开始日期的占位内容 | string | — | — |
 | end-placeholder | 范围选择时结束日期的占位内容 | string | — | — |
-| type | 显示类型 | string | year/month/date/dates/ week/datetime/datetimerange/ daterange/monthrange | date |
+| type | 显示类型 | string | quarter/year/month/date/dates/ week/datetime/datetimerange/ daterange/monthrange | date |
 | format | 显示在输入框中的格式 | string | 见[日期格式](#/zh-CN/component/date-picker#ri-qi-ge-shi) | yyyy-MM-dd |
 | align | 对齐方式 | string | left, center, right | left |
 | popper-class | DatePicker 下拉框的类名 | string | — | — |

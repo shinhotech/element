@@ -1,0 +1,58 @@
+@import "../common/var";
+
+@include b(quarter-table) {
+  font-size: 12px;
+  margin: -1px;
+  border-collapse: collapse;
+
+  .el-icon {
+    color: $--datepicker-icon-color;
+  }
+
+  td {
+    text-align: center;
+    // padding: 10px 3px;
+    padding: 0;
+    cursor: pointer;
+
+    &.today {
+      .cell {
+        color: $--color-primary;
+        font-weight: bold;
+      }
+    }
+
+    &.disabled .cell {
+      background-color: $--background-color-base;
+      cursor: not-allowed;
+      color: $--color-text-placeholder;
+
+      &:hover {
+        color: $--color-text-placeholder;
+      }
+    }
+
+    .cell {
+      width: 94px;
+      display: block;
+      line-height: 32px;
+      padding: 5px 3px;
+      color: $--datepicker-font-color;
+      margin: 10px auto;
+
+      &:hover {
+        color: $--datepicker-hover-font-color;
+        // background-color: $--color-primary-light-9;
+        // border: 1px solid $--color-primary-light-6;
+      }
+      & p {
+        line-height: 22px;
+        margin: 0;
+      }
+    }
+
+    &.current:not(.disabled) .cell {
+      color: $--datepicker-active-color;
+    }
+  }
+}

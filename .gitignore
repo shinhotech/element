@@ -11,14 +11,15 @@ lerna-debug.log.*
 lib
 .idea
 .vscode
-examples/element-ui
+examples/shinho-sh-ui
 examples/pages/en-US
 examples/pages/zh-CN
 examples/pages/es
 examples/pages/fr-FR
-fe.element/element-ui
+fe.element/shinho-sh-ui
 .npmrc
 coverage
 waiter.config.js
 build/bin/algolia-key.js
 .envrc
+.package-lock.json

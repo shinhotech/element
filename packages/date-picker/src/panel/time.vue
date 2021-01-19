@@ -31,8 +31,8 @@
 </template>
 
 <script type="text/babel">
-  import { limitTimeRange, isDate, clearMilliseconds, timeWithinRange } from 'element-ui/src/utils/date-util';
-  import Locale from 'element-ui/src/mixins/locale';
+  import { limitTimeRange, isDate, clearMilliseconds, timeWithinRange } from 'shinho-sh-ui/src/utils/date-util';
+  import Locale from 'shinho-sh-ui/src/mixins/locale';
   import TimeSpinner from '../basic/time-spinner';
 
   export default {

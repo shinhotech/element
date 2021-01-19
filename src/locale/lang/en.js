@@ -34,6 +34,7 @@ export default {
       month11: 'November',
       month12: 'December',
       week: 'week',
+      month: 'month',
       weeks: {
         sun: 'Sun',
         mon: 'Mon',

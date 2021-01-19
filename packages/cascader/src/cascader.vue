@@ -112,21 +112,21 @@
 </template>
 
 <script>
-import Popper from 'element-ui/src/utils/vue-popper';
-import Clickoutside from 'element-ui/src/utils/clickoutside';
-import Emitter from 'element-ui/src/mixins/emitter';
-import Locale from 'element-ui/src/mixins/locale';
-import Migrating from 'element-ui/src/mixins/migrating';
-import ElInput from 'element-ui/packages/input';
-import ElTag from 'element-ui/packages/tag';
-import ElScrollbar from 'element-ui/packages/scrollbar';
-import ElCascaderPanel from 'element-ui/packages/cascader-panel';
-import AriaUtils from 'element-ui/src/utils/aria-utils';
-import { t } from 'element-ui/src/locale';
-import { isEqual, isEmpty, kebabCase } from 'element-ui/src/utils/util';
-import { isUndefined, isFunction } from 'element-ui/src/utils/types';
-import { isDef } from 'element-ui/src/utils/shared';
-import { addResizeListener, removeResizeListener } from 'element-ui/src/utils/resize-event';
+import Popper from 'shinho-sh-ui/src/utils/vue-popper';
+import Clickoutside from 'shinho-sh-ui/src/utils/clickoutside';
+import Emitter from 'shinho-sh-ui/src/mixins/emitter';
+import Locale from 'shinho-sh-ui/src/mixins/locale';
+import Migrating from 'shinho-sh-ui/src/mixins/migrating';
+import ElInput from 'shinho-sh-ui/packages/input';
+import ElTag from 'shinho-sh-ui/packages/tag';
+import ElScrollbar from 'shinho-sh-ui/packages/scrollbar';
+import ElCascaderPanel from 'shinho-sh-ui/packages/cascader-panel';
+import AriaUtils from 'shinho-sh-ui/src/utils/aria-utils';
+import { t } from 'shinho-sh-ui/src/locale';
+import { isEqual, isEmpty, kebabCase } from 'shinho-sh-ui/src/utils/util';
+import { isUndefined, isFunction } from 'shinho-sh-ui/src/utils/types';
+import { isDef } from 'shinho-sh-ui/src/utils/shared';
+import { addResizeListener, removeResizeListener } from 'shinho-sh-ui/src/utils/resize-event';
 import debounce from 'throttle-debounce/debounce';
 
 const { keys: KeyCode } = AriaUtils;
