@@ -121,6 +121,7 @@
       type="quarter"
       format="yyyy-QQ-MM"
       value-format="yyyy-MM"
+      :picker-options="pickerOptions"
       placeholder="选择季度"
       @change="handleChange"
     >
@@ -133,7 +134,7 @@
       return {
         pickerOptions: {
           disabledDate(time) {
-            console.log('time: ', time);
+            // console.log('time: ', time);
             return time.getTime() > Date.now();
           }
         },
