@@ -2,8 +2,8 @@
  * @Descripttion: 季度组件面板
  * @Author: 19080088
  * @Date: 2020-11-24 10:49:51
- * @LastEditors: Please set LastEditors
- * @LastEditTime: 2021-01-10 17:07:54
+ * @LastEditors: 19080088
+ * @LastEditTime: 2021-01-19 14:40:13
 -->
 <template>
   <table @click="handleQuraterTableClick" class="el-quarter-table">
@@ -82,10 +82,10 @@
         if (hasClass(target.parentNode, 'disabled')) return;
         const quarter = target.children[0] ? (target.children[0].textContent || target.children[0].innerHTML) : '';
         const transfromMonth = {
-          'Q1': 2,
-          'Q2': 5,
-          'Q3': 8,
-          'Q4': 11
+          'Q1': 0,
+          'Q2': 3,
+          'Q3': 6,
+          'Q4': 9
         };
         this.$emit('pick', Number(transfromMonth[quarter]));
       }

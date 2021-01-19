@@ -573,7 +573,7 @@ describe('DatePicker', () => {
       setTimeout(_ => {
         const date = vm.$refs.compo.picker.date;
         expect(date.getFullYear()).to.equal(2019);
-        expect(date.getMonth()).to.equal(5);
+        expect(date.getMonth()).to.equal(3);
         done();
       }, DELAY);
     });

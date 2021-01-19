@@ -1,5 +1,71 @@
 ## 更新日志
 
+### 2.15.1
+
+*2021-01-20*
+
+#### Add
+
+- DatePicker
+  - 添加type为quarter的季度选择
+
+### 2.15.0
+
+*2021-01-15*
+
+#### Bug 修复
+
+- Select
+  - 修复 placeholder 国际化 bug (#17644 by @nzh63)
+- Popconfirm
+  - 修复 Popconfirm 国际化 bug by @iamkun
+- Drawer
+  - 修复 focus bug (#20626 by @cs1707)
+- Image
+  - 图片预览优化 (#20652 by @cs1707)
+
+#### 优化
+
+- Doc
+  - 更新法语文档 datetime-picker.md (#20543 by @lonk)
+  - 更新 Progress 组件文档 (#20641 by @cs1707)
+
+### 2.14.1
+
+*2020-11-11*
+
+#### Bug 修复
+
+- Popover
+  - 兼容 Vue 2.6 新 v-slot 语法 (#20424 by @iamkun)
+
+#### 优化
+
+- I18n
+  - 更新阿拉伯语翻译 (#20202 by @elkattan)
+  - 更新维吾尔语翻译 (#20177 by @IlhamTahir)
+
+### 2.14.0
+
+*2020-10-29*
+
+#### 非兼容性更新
+
+- Popconfirm
+  - 事件名称修改为 `confirm`, `cancel` (#20240 by @hugiron)
+
+#### Bug 修复
+
+- Progress
+  - 修复参数错误的问题 (#19985 by @Caaalabash)
+
+#### 优化
+
+- I18n
+  - 更新俄语翻译 (#19451 by @yangirov)
+  - 更新高棉语翻译 (#20077 by @Sovai)
+  - 更新乌克兰语翻译 (#20344 by @MammutAlex)
+
 ### 2.13.2
 
 *2020-05-18*
@@ -11,7 +77,7 @@
 - Image
   - 更新错误状态 (#19194 by @lhx6538665)
 
-#### Optimization
+#### 优化
 
 - I18n
   - 更新 ru-RU popconfirm 翻译 (#19220 by @Opppex)

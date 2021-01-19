@@ -1,5 +1,71 @@
 ## Changelog
 
+### 2.15.1
+
+*2021-01-20*
+
+#### Add
+
+- DatePicker
+  - add type quarter
+
+### 2.15.0
+
+*2021-01-15*
+
+#### Bug fixes
+
+- Select
+  - Fix placeholder i18n bug (#17644 by @nzh63)
+- Popconfirm
+  - Popconfirm i18n bug by @iamkun
+- Drawer
+  - Fix focus bug (#20626 by @cs1707)
+- Image
+  - Preview optimization (#20652 by @cs1707)
+
+#### Optimization
+
+- Doc
+  - Fix typo in french translation of datetime-picker.md (#20543 by @lonk)
+  - Add format attribute description to the progress component (#20641 by @cs1707)
+
+### 2.14.1
+
+*2020-11-11*
+
+#### Bug fixes
+
+- Popover
+  - Compatible with Vue 2.6 new v-slot syntax (#20424 by @iamkun)
+
+#### Optimization
+
+- I18n
+  - Update Arabic translation (#20202 by @elkattan)
+  - Update Uighur translation (#20177 by @IlhamTahir)
+
+### 2.14.0
+
+*2020-10-29*
+
+#### Breaking changes
+
+- Popconfirm
+  - Rename event name to `confirm`, `cancel` (#20240 by @hugiron)
+
+#### Bug fixes
+
+- Progress
+  - Fix attribute error (#19985 by @Caaalabash)
+
+#### Optimization
+
+- I18n
+  - Update Russian translation (#19451 by @yangirov)
+  - Update Khmer translation (#20077 by @Sovai)
+  - Update Ukrainian translation (#20344 by @MammutAlex)
+
 ### 2.13.2
 
 *2020-05-18*
