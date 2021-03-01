@@ -47,6 +47,9 @@
     "type": "git",
     "url": "https://github.com/shinhotech/element.git"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/shinhotech"
+  },
   "homepage": "http://element.eleme.io",
   "keywords": [
     "eleme",
