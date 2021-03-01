@@ -34,7 +34,16 @@
 
 > A Vue.js 2.0 UI Toolkit for Web.
 
-本项目是在element-ui 基础上，进行定制化开发。更名为shinho-sh-ui。
+本项目是在element-ui 基础上，进行定制化开发。更名为sh-ui。
+
+## Develop Docs
+
+为本项目提交源码，可以阅读以下文档加深对本项目的理解。
+
+- [项目结构](./项目结构.md)
+- [开发规范](./开发规范.md)
+- [开发、发布流程](./开发、发布流程.md)
+- [维护](./维护.md)
 
 ## Links
 - Homepage and documentation
