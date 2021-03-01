@@ -34,9 +34,9 @@
   import TreeStore from './model/tree-store';
   import { getNodeKey, findNearestComponent } from './model/util';
   import ElTreeNode from './tree-node.vue';
-  import {t} from 'shinho-sh-ui/src/locale';
-  import emitter from 'shinho-sh-ui/src/mixins/emitter';
-  import { addClass, removeClass } from 'shinho-sh-ui/src/utils/dom';
+  import {t} from '@shinhotech/sh-ui/src/locale';
+  import emitter from '@shinhotech/sh-ui/src/mixins/emitter';
+  import { addClass, removeClass } from '@shinhotech/sh-ui/src/utils/dom';
 
   export default {
     name: 'ElTree',

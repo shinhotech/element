@@ -44,9 +44,9 @@
 </template>
 
 <script type="text/babel">
-  import { hasClass } from 'shinho-sh-ui/src/utils/dom';
-  import { isDate, range, nextDate, getDayCountOfYear } from 'shinho-sh-ui/src/utils/date-util';
-  import { arrayFindIndex, coerceTruthyValueToArray } from 'shinho-sh-ui/src/utils/util';
+  import { hasClass } from '@shinhotech/sh-ui/src/utils/dom';
+  import { isDate, range, nextDate, getDayCountOfYear } from '@shinhotech/sh-ui/src/utils/date-util';
+  import { arrayFindIndex, coerceTruthyValueToArray } from '@shinhotech/sh-ui/src/utils/util';
 
   const datesInYear = year => {
     const numOfDays = getDayCountOfYear(year);

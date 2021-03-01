@@ -134,21 +134,21 @@
 </template>
 
 <script type="text/babel">
-  import Emitter from 'shinho-sh-ui/src/mixins/emitter';
-  import Focus from 'shinho-sh-ui/src/mixins/focus';
-  import Locale from 'shinho-sh-ui/src/mixins/locale';
-  import ElInput from 'shinho-sh-ui/packages/input';
+  import Emitter from '@shinhotech/sh-ui/src/mixins/emitter';
+  import Focus from '@shinhotech/sh-ui/src/mixins/focus';
+  import Locale from '@shinhotech/sh-ui/src/mixins/locale';
+  import ElInput from '@shinhotech/sh-ui/packages/input';
   import ElSelectMenu from './select-dropdown.vue';
   import ElOption from './option.vue';
-  import ElTag from 'shinho-sh-ui/packages/tag';
-  import ElScrollbar from 'shinho-sh-ui/packages/scrollbar';
+  import ElTag from '@shinhotech/sh-ui/packages/tag';
+  import ElScrollbar from '@shinhotech/sh-ui/packages/scrollbar';
   import debounce from 'throttle-debounce/debounce';
-  import Clickoutside from 'shinho-sh-ui/src/utils/clickoutside';
-  import { addResizeListener, removeResizeListener } from 'shinho-sh-ui/src/utils/resize-event';
-  import scrollIntoView from 'shinho-sh-ui/src/utils/scroll-into-view';
-  import { getValueByPath, valueEquals, isIE, isEdge } from 'shinho-sh-ui/src/utils/util';
+  import Clickoutside from '@shinhotech/sh-ui/src/utils/clickoutside';
+  import { addResizeListener, removeResizeListener } from '@shinhotech/sh-ui/src/utils/resize-event';
+  import scrollIntoView from '@shinhotech/sh-ui/src/utils/scroll-into-view';
+  import { getValueByPath, valueEquals, isIE, isEdge } from '@shinhotech/sh-ui/src/utils/util';
   import NavigationMixin from './navigation-mixin';
-  import { isKorean } from 'shinho-sh-ui/src/utils/shared';
+  import { isKorean } from '@shinhotech/sh-ui/src/utils/shared';
 
   export default {
     mixins: [Emitter, Locale, Focus('reference'), NavigationMixin],

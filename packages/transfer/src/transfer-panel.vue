@@ -52,10 +52,10 @@
 </template>
 
 <script>
-  import ElCheckboxGroup from 'shinho-sh-ui/packages/checkbox-group';
-  import ElCheckbox from 'shinho-sh-ui/packages/checkbox';
-  import ElInput from 'shinho-sh-ui/packages/input';
-  import Locale from 'shinho-sh-ui/src/mixins/locale';
+  import ElCheckboxGroup from '@shinhotech/sh-ui/packages/checkbox-group';
+  import ElCheckbox from '@shinhotech/sh-ui/packages/checkbox';
+  import ElInput from '@shinhotech/sh-ui/packages/input';
+  import Locale from '@shinhotech/sh-ui/src/mixins/locale';
 
   export default {
     mixins: [Locale],

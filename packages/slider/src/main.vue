@@ -74,10 +74,10 @@
 </template>
 
 <script type="text/babel">
-  import ElInputNumber from 'shinho-sh-ui/packages/input-number';
+  import ElInputNumber from '@shinhotech/sh-ui/packages/input-number';
   import SliderButton from './button.vue';
   import SliderMarker from './marker';
-  import Emitter from 'shinho-sh-ui/src/mixins/emitter';
+  import Emitter from '@shinhotech/sh-ui/src/mixins/emitter';
 
   export default {
     name: 'ElSlider',

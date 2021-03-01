@@ -19,8 +19,8 @@
 </template>
 
 <script type="text/babel">
-  import ElScrollbar from 'shinho-sh-ui/packages/scrollbar';
-  import scrollIntoView from 'shinho-sh-ui/src/utils/scroll-into-view';
+  import ElScrollbar from '@shinhotech/sh-ui/packages/scrollbar';
+  import scrollIntoView from '@shinhotech/sh-ui/src/utils/scroll-into-view';
 
   const parseTime = function(time) {
     const values = (time || '').split(':');

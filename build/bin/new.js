@@ -112,8 +112,8 @@ fileSave(sassPath)
   .write(sassImportText, 'utf8')
   .end('\n');
 
-// 添加到 shinho-sh-ui.d.ts
-const elementTsPath = path.join(__dirname, '../../types/shinho-sh-ui.d.ts');
+// 添加到 @shinhotech/sh-ui.d.ts
+const elementTsPath = path.join(__dirname, '../../types/@shinhotech/sh-ui.d.ts');
 
 let elementTsText = `${fs.readFileSync(elementTsPath)}
 /** ${ComponentName} Component */

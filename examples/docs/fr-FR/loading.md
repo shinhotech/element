@@ -175,7 +175,7 @@ Affichez une animation en plein écran quand vous charger des données.
 Vous pouvez invoquer Loading comme un service. Importez le service Loading:
 
 ```javascript
-import { Loading } from 'shinho-sh-ui';
+import { Loading } from '@shinhotech/sh-ui';
 ```
 Et invoquer-le:
 

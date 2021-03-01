@@ -1,8 +1,8 @@
 <script type="text/jsx">
-  import emitter from 'shinho-sh-ui/src/mixins/emitter';
-  import Migrating from 'shinho-sh-ui/src/mixins/migrating';
-  import Menubar from 'shinho-sh-ui/src/utils/menu/aria-menubar';
-  import { addClass, removeClass, hasClass } from 'shinho-sh-ui/src/utils/dom';
+  import emitter from '@shinhotech/sh-ui/src/mixins/emitter';
+  import Migrating from '@shinhotech/sh-ui/src/mixins/migrating';
+  import Menubar from '@shinhotech/sh-ui/src/utils/menu/aria-menubar';
+  import { addClass, removeClass, hasClass } from '@shinhotech/sh-ui/src/utils/dom';
 
   export default {
     name: 'ElMenu',

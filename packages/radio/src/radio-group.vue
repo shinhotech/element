@@ -9,7 +9,7 @@
   </component>
 </template>
 <script>
-  import Emitter from 'shinho-sh-ui/src/mixins/emitter';
+  import Emitter from '@shinhotech/sh-ui/src/mixins/emitter';
 
   const keyCode = Object.freeze({
     LEFT: 37,

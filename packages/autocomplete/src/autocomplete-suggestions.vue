@@ -18,9 +18,9 @@
   </transition>
 </template>
 <script>
-  import Popper from 'shinho-sh-ui/src/utils/vue-popper';
-  import Emitter from 'shinho-sh-ui/src/mixins/emitter';
-  import ElScrollbar from 'shinho-sh-ui/packages/scrollbar';
+  import Popper from '@shinhotech/sh-ui/src/utils/vue-popper';
+  import Emitter from '@shinhotech/sh-ui/src/mixins/emitter';
+  import ElScrollbar from '@shinhotech/sh-ui/packages/scrollbar';
 
   export default {
     components: { ElScrollbar },

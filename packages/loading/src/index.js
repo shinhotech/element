@@ -1,9 +1,9 @@
 import Vue from 'vue';
 import loadingVue from './loading.vue';
-import { addClass, removeClass, getStyle } from 'shinho-sh-ui/src/utils/dom';
-import { PopupManager } from 'shinho-sh-ui/src/utils/popup';
-import afterLeave from 'shinho-sh-ui/src/utils/after-leave';
-import merge from 'shinho-sh-ui/src/utils/merge';
+import { addClass, removeClass, getStyle } from '@shinhotech/sh-ui/src/utils/dom';
+import { PopupManager } from '@shinhotech/sh-ui/src/utils/popup';
+import afterLeave from '@shinhotech/sh-ui/src/utils/after-leave';
+import merge from '@shinhotech/sh-ui/src/utils/merge';
 
 const LoadingConstructor = Vue.extend(loadingVue);
 

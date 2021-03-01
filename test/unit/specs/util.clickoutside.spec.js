@@ -1,4 +1,4 @@
-import Clickoutside from 'shinho-sh-ui/src/utils/clickoutside';
+import Clickoutside from '@shinhotech/sh-ui/src/utils/clickoutside';
 const ctx = '@@clickoutsideContext';
 
 import { triggerEvent, triggerClick } from '../util';

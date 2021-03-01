@@ -52,8 +52,8 @@
 </template>
 
 <script>
-import { on, off } from 'shinho-sh-ui/src/utils/dom';
-import { rafThrottle, isFirefox } from 'shinho-sh-ui/src/utils/util';
+import { on, off } from '@shinhotech/sh-ui/src/utils/dom';
+import { rafThrottle, isFirefox } from '@shinhotech/sh-ui/src/utils/util';
 
 const Mode = {
   CONTAIN: {

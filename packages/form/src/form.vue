@@ -7,7 +7,7 @@
   </form>
 </template>
 <script>
-  import objectAssign from 'shinho-sh-ui/src/utils/merge';
+  import objectAssign from '@shinhotech/sh-ui/src/utils/merge';
 
   export default {
     name: 'ElForm',

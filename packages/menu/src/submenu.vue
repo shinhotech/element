@@ -1,8 +1,8 @@
 <script>
-  import ElCollapseTransition from 'shinho-sh-ui/src/transitions/collapse-transition';
+  import ElCollapseTransition from '@shinhotech/sh-ui/src/transitions/collapse-transition';
   import menuMixin from './menu-mixin';
-  import Emitter from 'shinho-sh-ui/src/mixins/emitter';
-  import Popper from 'shinho-sh-ui/src/utils/vue-popper';
+  import Emitter from '@shinhotech/sh-ui/src/mixins/emitter';
+  import Popper from '@shinhotech/sh-ui/src/utils/vue-popper';
 
   const poperMixins = {
     props: {

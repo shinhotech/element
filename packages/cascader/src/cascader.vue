@@ -112,21 +112,21 @@
 </template>
 
 <script>
-import Popper from 'shinho-sh-ui/src/utils/vue-popper';
-import Clickoutside from 'shinho-sh-ui/src/utils/clickoutside';
-import Emitter from 'shinho-sh-ui/src/mixins/emitter';
-import Locale from 'shinho-sh-ui/src/mixins/locale';
-import Migrating from 'shinho-sh-ui/src/mixins/migrating';
-import ElInput from 'shinho-sh-ui/packages/input';
-import ElTag from 'shinho-sh-ui/packages/tag';
-import ElScrollbar from 'shinho-sh-ui/packages/scrollbar';
-import ElCascaderPanel from 'shinho-sh-ui/packages/cascader-panel';
-import AriaUtils from 'shinho-sh-ui/src/utils/aria-utils';
-import { t } from 'shinho-sh-ui/src/locale';
-import { isEqual, isEmpty, kebabCase } from 'shinho-sh-ui/src/utils/util';
-import { isUndefined, isFunction } from 'shinho-sh-ui/src/utils/types';
-import { isDef } from 'shinho-sh-ui/src/utils/shared';
-import { addResizeListener, removeResizeListener } from 'shinho-sh-ui/src/utils/resize-event';
+import Popper from '@shinhotech/sh-ui/src/utils/vue-popper';
+import Clickoutside from '@shinhotech/sh-ui/src/utils/clickoutside';
+import Emitter from '@shinhotech/sh-ui/src/mixins/emitter';
+import Locale from '@shinhotech/sh-ui/src/mixins/locale';
+import Migrating from '@shinhotech/sh-ui/src/mixins/migrating';
+import ElInput from '@shinhotech/sh-ui/packages/input';
+import ElTag from '@shinhotech/sh-ui/packages/tag';
+import ElScrollbar from '@shinhotech/sh-ui/packages/scrollbar';
+import ElCascaderPanel from '@shinhotech/sh-ui/packages/cascader-panel';
+import AriaUtils from '@shinhotech/sh-ui/src/utils/aria-utils';
+import { t } from '@shinhotech/sh-ui/src/locale';
+import { isEqual, isEmpty, kebabCase } from '@shinhotech/sh-ui/src/utils/util';
+import { isUndefined, isFunction } from '@shinhotech/sh-ui/src/utils/types';
+import { isDef } from '@shinhotech/sh-ui/src/utils/shared';
+import { addResizeListener, removeResizeListener } from '@shinhotech/sh-ui/src/utils/resize-event';
 import debounce from 'throttle-debounce/debounce';
 
 const { keys: KeyCode } = AriaUtils;

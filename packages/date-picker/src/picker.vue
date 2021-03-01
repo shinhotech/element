@@ -85,12 +85,12 @@
 
 <script>
 import Vue from 'vue';
-import Clickoutside from 'shinho-sh-ui/src/utils/clickoutside';
-import { formatDate, parseDate, isDateObject, getWeekNumber } from 'shinho-sh-ui/src/utils/date-util';
-import Popper from 'shinho-sh-ui/src/utils/vue-popper';
-import Emitter from 'shinho-sh-ui/src/mixins/emitter';
-import ElInput from 'shinho-sh-ui/packages/input';
-import merge from 'shinho-sh-ui/src/utils/merge';
+import Clickoutside from '@shinhotech/sh-ui/src/utils/clickoutside';
+import { formatDate, parseDate, isDateObject, getWeekNumber } from '@shinhotech/sh-ui/src/utils/date-util';
+import Popper from '@shinhotech/sh-ui/src/utils/vue-popper';
+import Emitter from '@shinhotech/sh-ui/src/mixins/emitter';
+import ElInput from '@shinhotech/sh-ui/packages/input';
+import merge from '@shinhotech/sh-ui/src/utils/merge';
 
 const NewPopper = {
   props: {

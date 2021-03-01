@@ -101,9 +101,9 @@
 </template>
 
 <script type="text/babel">
-  import { getRangeHours, getRangeMinutes, modifyTime } from 'shinho-sh-ui/src/utils/date-util';
-  import ElScrollbar from 'shinho-sh-ui/packages/scrollbar';
-  import RepeatClick from 'shinho-sh-ui/src/directives/repeat-click';
+  import { getRangeHours, getRangeMinutes, modifyTime } from '@shinhotech/sh-ui/src/utils/date-util';
+  import ElScrollbar from '@shinhotech/sh-ui/packages/scrollbar';
+  import RepeatClick from '@shinhotech/sh-ui/src/directives/repeat-click';
 
   export default {
     components: { ElScrollbar },

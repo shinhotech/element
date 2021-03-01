@@ -1,7 +1,7 @@
-import Popper from 'shinho-sh-ui/src/utils/vue-popper';
+import Popper from '@shinhotech/sh-ui/src/utils/vue-popper';
 import debounce from 'throttle-debounce/debounce';
-import { addClass, removeClass, on, off } from 'shinho-sh-ui/src/utils/dom';
-import { generateId } from 'shinho-sh-ui/src/utils/util';
+import { addClass, removeClass, on, off } from '@shinhotech/sh-ui/src/utils/dom';
+import { generateId } from '@shinhotech/sh-ui/src/utils/util';
 import Vue from 'vue';
 
 export default {

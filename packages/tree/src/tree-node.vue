@@ -72,9 +72,9 @@
 </template>
 
 <script type="text/jsx">
-  import ElCollapseTransition from 'shinho-sh-ui/src/transitions/collapse-transition';
-  import ElCheckbox from 'shinho-sh-ui/packages/checkbox';
-  import emitter from 'shinho-sh-ui/src/mixins/emitter';
+  import ElCollapseTransition from '@shinhotech/sh-ui/src/transitions/collapse-transition';
+  import ElCheckbox from '@shinhotech/sh-ui/packages/checkbox';
+  import emitter from '@shinhotech/sh-ui/src/mixins/emitter';
   import { getNodeKey } from './model/util';
 
   export default {

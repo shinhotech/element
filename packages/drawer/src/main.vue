@@ -47,8 +47,8 @@
 </template>
 
 <script>
-import Popup from 'shinho-sh-ui/src/utils/popup';
-import emitter from 'shinho-sh-ui/src/mixins/emitter';
+import Popup from '@shinhotech/sh-ui/src/utils/popup';
+import emitter from '@shinhotech/sh-ui/src/mixins/emitter';
 
 export default {
   name: 'ElDrawer',

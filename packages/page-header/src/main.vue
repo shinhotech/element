@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { t } from 'shinho-sh-ui/src/locale';
+import { t } from '@shinhotech/sh-ui/src/locale';
 export default {
   name: 'ElPageHeader',
 

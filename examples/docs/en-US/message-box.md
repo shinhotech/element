@@ -288,7 +288,7 @@ If Element is fully imported, it will add the following global methods for Vue.p
 If you prefer importing `MessageBox` on demand:
 
 ```javascript
-import { MessageBox } from 'shinho-sh-ui';
+import { MessageBox } from '@shinhotech/sh-ui';
 ```
 
 The corresponding methods are: `MessageBox`, `MessageBox.alert`, `MessageBox.confirm` and `MessageBox.prompt`. The parameters are the same as above.

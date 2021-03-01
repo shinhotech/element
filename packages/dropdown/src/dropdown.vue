@@ -1,10 +1,10 @@
 <script>
-  import Clickoutside from 'shinho-sh-ui/src/utils/clickoutside';
-  import Emitter from 'shinho-sh-ui/src/mixins/emitter';
-  import Migrating from 'shinho-sh-ui/src/mixins/migrating';
-  import ElButton from 'shinho-sh-ui/packages/button';
-  import ElButtonGroup from 'shinho-sh-ui/packages/button-group';
-  import { generateId } from 'shinho-sh-ui/src/utils/util';
+  import Clickoutside from '@shinhotech/sh-ui/src/utils/clickoutside';
+  import Emitter from '@shinhotech/sh-ui/src/mixins/emitter';
+  import Migrating from '@shinhotech/sh-ui/src/mixins/migrating';
+  import ElButton from '@shinhotech/sh-ui/packages/button';
+  import ElButtonGroup from '@shinhotech/sh-ui/packages/button-group';
+  import { generateId } from '@shinhotech/sh-ui/src/utils/util';
 
   export default {
     name: 'ElDropdown',

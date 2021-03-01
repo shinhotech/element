@@ -21,15 +21,15 @@ The above website enables you to preview theme of a new theme color in real-time
 $--color-primary: teal;
 
 /* icon font path, required */
-$--font-path: '~shinho-sh-ui/lib/theme-chalk/fonts';
+$--font-path: '~@shinhotech/sh-ui/lib/theme-chalk/fonts';
 
-@import "~shinho-sh-ui/packages/theme-chalk/src/index";
+@import "~@shinhotech/sh-ui/packages/theme-chalk/src/index";
 ```
 
 Then in the entry file of your project, import this style file instead of Element's built CSS:
 ```JS
 import Vue from 'vue'
-import Element from 'shinho-sh-ui'
+import Element from '@shinhotech/sh-ui'
 import './element-variables.scss'
 
 Vue.use(Element)
@@ -107,7 +107,7 @@ Importing your own theme is just like importing the default theme, only this tim
 
 ```javascript
 import '../theme/index.css'
-import ElementUI from 'shinho-sh-ui'
+import ElementUI from '@shinhotech/sh-ui'
 import Vue from 'vue'
 
 Vue.use(ElementUI)
@@ -121,7 +121,7 @@ If you are using `babel-plugin-component` for on-demand import, just modify `.ba
     [
       "component",
       {
-        "libraryName": "shinho-sh-ui",
+        "libraryName": "@shinhotech/sh-ui",
         "styleLibraryName": "~theme"
       }
     ]

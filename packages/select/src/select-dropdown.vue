@@ -8,7 +8,7 @@
 </template>
 
 <script type="text/babel">
-  import Popper from 'shinho-sh-ui/src/utils/vue-popper';
+  import Popper from '@shinhotech/sh-ui/src/utils/vue-popper';
 
   export default {
     name: 'ElSelectDropdown',

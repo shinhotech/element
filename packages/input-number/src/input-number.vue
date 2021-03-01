@@ -46,9 +46,9 @@
   </div>
 </template>
 <script>
-  import ElInput from 'shinho-sh-ui/packages/input';
-  import Focus from 'shinho-sh-ui/src/mixins/focus';
-  import RepeatClick from 'shinho-sh-ui/src/directives/repeat-click';
+  import ElInput from '@shinhotech/sh-ui/packages/input';
+  import Focus from '@shinhotech/sh-ui/src/mixins/focus';
+  import RepeatClick from '@shinhotech/sh-ui/src/directives/repeat-click';
 
   export default {
     name: 'ElInputNumber',

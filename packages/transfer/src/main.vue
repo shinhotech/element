@@ -42,11 +42,11 @@
 </template>
 
 <script>
-  import ElButton from 'shinho-sh-ui/packages/button';
-  import Emitter from 'shinho-sh-ui/src/mixins/emitter';
-  import Locale from 'shinho-sh-ui/src/mixins/locale';
+  import ElButton from '@shinhotech/sh-ui/packages/button';
+  import Emitter from '@shinhotech/sh-ui/src/mixins/emitter';
+  import Locale from '@shinhotech/sh-ui/src/mixins/locale';
   import TransferPanel from './transfer-panel.vue';
-  import Migrating from 'shinho-sh-ui/src/mixins/migrating';
+  import Migrating from '@shinhotech/sh-ui/src/mixins/migrating';
 
   export default {
     name: 'ElTransfer',

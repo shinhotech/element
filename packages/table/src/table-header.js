@@ -1,6 +1,6 @@
 import Vue from 'vue';
-import { hasClass, addClass, removeClass } from 'shinho-sh-ui/src/utils/dom';
-import ElCheckbox from 'shinho-sh-ui/packages/checkbox';
+import { hasClass, addClass, removeClass } from '@shinhotech/sh-ui/src/utils/dom';
+import ElCheckbox from '@shinhotech/sh-ui/packages/checkbox';
 import FilterPanel from './filter-panel.vue';
 import LayoutObserver from './layout-observer';
 import { mapStates } from './store/helper';

@@ -36,9 +36,9 @@
   </div>
 </template>
 <script>
-  import emitter from 'shinho-sh-ui/src/mixins/emitter';
-  import Focus from 'shinho-sh-ui/src/mixins/focus';
-  import Migrating from 'shinho-sh-ui/src/mixins/migrating';
+  import emitter from '@shinhotech/sh-ui/src/mixins/emitter';
+  import Focus from '@shinhotech/sh-ui/src/mixins/focus';
+  import Migrating from '@shinhotech/sh-ui/src/mixins/migrating';
 
   export default {
     name: 'ElSwitch',

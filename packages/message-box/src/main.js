@@ -35,8 +35,8 @@ const defaults = {
 
 import Vue from 'vue';
 import msgboxVue from './main.vue';
-import merge from 'shinho-sh-ui/src/utils/merge';
-import { isVNode } from 'shinho-sh-ui/src/utils/vdom';
+import merge from '@shinhotech/sh-ui/src/utils/merge';
+import { isVNode } from '@shinhotech/sh-ui/src/utils/vdom';
 
 const MessageBoxConstructor = Vue.extend(msgboxVue);
 

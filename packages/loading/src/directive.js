@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import Loading from './loading.vue';
-import { addClass, removeClass, getStyle } from 'shinho-sh-ui/src/utils/dom';
-import { PopupManager } from 'shinho-sh-ui/src/utils/popup';
-import afterLeave from 'shinho-sh-ui/src/utils/after-leave';
+import { addClass, removeClass, getStyle } from '@shinhotech/sh-ui/src/utils/dom';
+import { PopupManager } from '@shinhotech/sh-ui/src/utils/popup';
+import afterLeave from '@shinhotech/sh-ui/src/utils/after-leave';
 const Mask = Vue.extend(Loading);
 
 const loadingDirective = {};

@@ -1,4 +1,4 @@
-import VuePopup from 'shinho-sh-ui/src/utils/popup';
+import VuePopup from '@shinhotech/sh-ui/src/utils/popup';
 import { createTest, destroyVM } from '../util';
 
 const Popup = Object.assign({}, VuePopup, {

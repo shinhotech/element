@@ -1,5 +1,5 @@
-import fecha from 'shinho-sh-ui/src/utils/date';
-import { t } from 'shinho-sh-ui/src/locale';
+import fecha from '@shinhotech/sh-ui/src/utils/date';
+import { t } from '@shinhotech/sh-ui/src/locale';
 
 const weeks = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 const months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];

@@ -1,4 +1,4 @@
-import { once, on } from 'shinho-sh-ui/src/utils/dom';
+import { once, on } from '@shinhotech/sh-ui/src/utils/dom';
 
 export default {
   bind(el, binding, vnode) {

@@ -1,6 +1,6 @@
 import Vue from 'vue';
-import merge from 'shinho-sh-ui/src/utils/merge';
-import PopupManager from 'shinho-sh-ui/src/utils/popup/popup-manager';
+import merge from '@shinhotech/sh-ui/src/utils/merge';
+import PopupManager from '@shinhotech/sh-ui/src/utils/popup/popup-manager';
 import getScrollBarWidth from '../scrollbar-width';
 import { getStyle, addClass, removeClass, hasClass } from '../dom';
 

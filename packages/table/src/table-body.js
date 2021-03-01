@@ -1,8 +1,8 @@
-import { arrayFindIndex } from 'shinho-sh-ui/src/utils/util';
+import { arrayFindIndex } from '@shinhotech/sh-ui/src/utils/util';
 import { getCell, getColumnByCell, getRowIdentity } from './util';
-import { getStyle, hasClass, removeClass, addClass } from 'shinho-sh-ui/src/utils/dom';
-import ElCheckbox from 'shinho-sh-ui/packages/checkbox';
-import ElTooltip from 'shinho-sh-ui/packages/tooltip';
+import { getStyle, hasClass, removeClass, addClass } from '@shinhotech/sh-ui/src/utils/dom';
+import ElCheckbox from '@shinhotech/sh-ui/packages/checkbox';
+import ElTooltip from '@shinhotech/sh-ui/packages/tooltip';
 import debounce from 'throttle-debounce/debounce';
 import LayoutObserver from './layout-observer';
 import { mapStates } from './store/helper';

@@ -33,9 +33,9 @@
 </template>
 
 <script>
-  import { hasClass } from 'shinho-sh-ui/src/utils/dom';
-  import { isObject } from 'shinho-sh-ui/src/utils/types';
-  import Migrating from 'shinho-sh-ui/src/mixins/migrating';
+  import { hasClass } from '@shinhotech/sh-ui/src/utils/dom';
+  import { isObject } from '@shinhotech/sh-ui/src/utils/types';
+  import Migrating from '@shinhotech/sh-ui/src/mixins/migrating';
 
   export default {
     name: 'ElRate',

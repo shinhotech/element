@@ -250,7 +250,7 @@ import {
 } from './constant.js';
 import { savePreviewToLocal } from './localstorage';
 import { tintColor } from '../../color.js';
-import dateUtil from 'shinho-sh-ui/src/utils/date';
+import dateUtil from '@shinhotech/sh-ui/src/utils/date';
 import { getActionDisplayName } from '../theme-configurator/utils/utils';
 
 export default {

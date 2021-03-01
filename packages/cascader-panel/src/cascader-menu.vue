@@ -1,8 +1,8 @@
 <script>
-import ElScrollbar from 'shinho-sh-ui/packages/scrollbar';
+import ElScrollbar from '@shinhotech/sh-ui/packages/scrollbar';
 import CascaderNode from './cascader-node.vue';
-import Locale from 'shinho-sh-ui/src/mixins/locale';
-import { generateId } from 'shinho-sh-ui/src/utils/util';
+import Locale from '@shinhotech/sh-ui/src/mixins/locale';
+import { generateId } from '@shinhotech/sh-ui/src/utils/util';
 
 export default {
   name: 'ElCascaderMenu',

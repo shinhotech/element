@@ -1,5 +1,5 @@
-import { isEqual, capitalize } from 'shinho-sh-ui/src/utils/util';
-import { isDef } from 'shinho-sh-ui/src/utils/shared';
+import { isEqual, capitalize } from '@shinhotech/sh-ui/src/utils/util';
+import { isDef } from '@shinhotech/sh-ui/src/utils/shared';
 
 let uid = 0;
 

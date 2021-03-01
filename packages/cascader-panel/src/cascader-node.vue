@@ -1,7 +1,7 @@
 <script>
-  import ElCheckbox from 'shinho-sh-ui/packages/checkbox';
-  import ElRadio from 'shinho-sh-ui/packages/radio';
-  import { isEqual } from 'shinho-sh-ui/src/utils/util';
+  import ElCheckbox from '@shinhotech/sh-ui/packages/checkbox';
+  import ElRadio from '@shinhotech/sh-ui/packages/radio';
+  import { isEqual } from '@shinhotech/sh-ui/src/utils/util';
 
   const stopPropagation = e => e.stopPropagation();
 

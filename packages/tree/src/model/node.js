@@ -1,6 +1,6 @@
-import objectAssign from 'shinho-sh-ui/src/utils/merge';
+import objectAssign from '@shinhotech/sh-ui/src/utils/merge';
 import { markNodeData, NODE_KEY } from './util';
-import { arrayFindIndex } from 'shinho-sh-ui/src/utils/util';
+import { arrayFindIndex } from '@shinhotech/sh-ui/src/utils/util';
 
 export const getChildState = node => {
   let all = true;

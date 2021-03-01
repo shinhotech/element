@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import scrollbarWidth from 'shinho-sh-ui/src/utils/scrollbar-width';
+import scrollbarWidth from '@shinhotech/sh-ui/src/utils/scrollbar-width';
 import { parseHeight } from './util';
 
 class TableLayout {

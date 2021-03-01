@@ -213,12 +213,12 @@
 </template>
 
 <script type="text/babel">
-  import ElCheckbox from 'shinho-sh-ui/packages/checkbox';
+  import ElCheckbox from '@shinhotech/sh-ui/packages/checkbox';
   import { debounce, throttle } from 'throttle-debounce';
-  import { addResizeListener, removeResizeListener } from 'shinho-sh-ui/src/utils/resize-event';
-  import Mousewheel from 'shinho-sh-ui/src/directives/mousewheel';
-  import Locale from 'shinho-sh-ui/src/mixins/locale';
-  import Migrating from 'shinho-sh-ui/src/mixins/migrating';
+  import { addResizeListener, removeResizeListener } from '@shinhotech/sh-ui/src/utils/resize-event';
+  import Mousewheel from '@shinhotech/sh-ui/src/directives/mousewheel';
+  import Locale from '@shinhotech/sh-ui/src/mixins/locale';
+  import Migrating from '@shinhotech/sh-ui/src/mixins/migrating';
   import { createStore, mapStates } from './store/helper';
   import TableLayout from './table-layout';
   import TableBody from './table-body';

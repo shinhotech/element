@@ -45,9 +45,9 @@
   </div>
 </template>
 <script>
-  import ElCollapseTransition from 'shinho-sh-ui/src/transitions/collapse-transition';
-  import Emitter from 'shinho-sh-ui/src/mixins/emitter';
-  import { generateId } from 'shinho-sh-ui/src/utils/util';
+  import ElCollapseTransition from '@shinhotech/sh-ui/src/transitions/collapse-transition';
+  import Emitter from '@shinhotech/sh-ui/src/mixins/emitter';
+  import { generateId } from '@shinhotech/sh-ui/src/utils/util';
 
   export default {
     name: 'ElCollapseItem',

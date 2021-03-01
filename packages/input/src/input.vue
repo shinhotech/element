@@ -108,11 +108,11 @@
   </div>
 </template>
 <script>
-  import emitter from 'shinho-sh-ui/src/mixins/emitter';
-  import Migrating from 'shinho-sh-ui/src/mixins/migrating';
+  import emitter from '@shinhotech/sh-ui/src/mixins/emitter';
+  import Migrating from '@shinhotech/sh-ui/src/mixins/migrating';
   import calcTextareaHeight from './calcTextareaHeight';
-  import merge from 'shinho-sh-ui/src/utils/merge';
-  import {isKorean} from 'shinho-sh-ui/src/utils/shared';
+  import merge from '@shinhotech/sh-ui/src/utils/merge';
+  import {isKorean} from '@shinhotech/sh-ui/src/utils/shared';
 
   export default {
     name: 'ElInput',

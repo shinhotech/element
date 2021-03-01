@@ -43,10 +43,10 @@
   import HueSlider from './hue-slider';
   import AlphaSlider from './alpha-slider';
   import Predefine from './predefine';
-  import Popper from 'shinho-sh-ui/src/utils/vue-popper';
-  import Locale from 'shinho-sh-ui/src/mixins/locale';
-  import ElInput from 'shinho-sh-ui/packages/input';
-  import ElButton from 'shinho-sh-ui/packages/button';
+  import Popper from '@shinhotech/sh-ui/src/utils/vue-popper';
+  import Locale from '@shinhotech/sh-ui/src/mixins/locale';
+  import ElInput from '@shinhotech/sh-ui/packages/input';
+  import ElButton from '@shinhotech/sh-ui/packages/button';
 
   export default {
     name: 'el-color-picker-dropdown',

@@ -40,9 +40,9 @@
 </template>
 <script>
   import AsyncValidator from 'async-validator';
-  import emitter from 'shinho-sh-ui/src/mixins/emitter';
-  import objectAssign from 'shinho-sh-ui/src/utils/merge';
-  import { noop, getPropByPath } from 'shinho-sh-ui/src/utils/util';
+  import emitter from '@shinhotech/sh-ui/src/mixins/emitter';
+  import objectAssign from '@shinhotech/sh-ui/src/utils/merge';
+  import { noop, getPropByPath } from '@shinhotech/sh-ui/src/utils/util';
   import LabelWrap from './label-wrap';
   export default {
     name: 'ElFormItem',

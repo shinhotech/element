@@ -1,8 +1,8 @@
 <script>
 import UploadList from './upload-list';
 import Upload from './upload';
-import ElProgress from 'shinho-sh-ui/packages/progress';
-import Migrating from 'shinho-sh-ui/src/mixins/migrating';
+import ElProgress from '@shinhotech/sh-ui/packages/progress';
+import Migrating from '@shinhotech/sh-ui/src/mixins/migrating';
 
 function noop() {}
 

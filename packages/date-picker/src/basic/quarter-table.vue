@@ -41,9 +41,9 @@
 </template>
 
 <script>
-  import { hasClass } from 'shinho-sh-ui/src/utils/dom';
-  import Locale from 'shinho-sh-ui/src/mixins/locale';
-  import { arrayFindIndex, coerceTruthyValueToArray } from 'shinho-sh-ui/src/utils/util';
+  import { hasClass } from '@shinhotech/sh-ui/src/utils/dom';
+  import Locale from '@shinhotech/sh-ui/src/mixins/locale';
+  import { arrayFindIndex, coerceTruthyValueToArray } from '@shinhotech/sh-ui/src/utils/util';
   const datesInMonth = (year, month) => {
     const firstDay = new Date(year, month, 1);
     return [firstDay];

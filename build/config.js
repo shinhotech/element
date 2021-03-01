@@ -9,21 +9,21 @@ var transitionList = fs.readdirSync(path.resolve(__dirname, '../src/transitions'
 var externals = {};
 
 Object.keys(Components).forEach(function(key) {
-  externals[`shinho-sh-ui/packages/${key}`] = `shinho-sh-ui/lib/${key}`;
+  externals[`@shinhotech/sh-ui/packages/${key}`] = `@shinhotech/sh-ui/lib/${key}`;
 });
 
-externals['shinho-sh-ui/src/locale'] = 'shinho-sh-ui/lib/locale';
+externals['@shinhotech/sh-ui/src/locale'] = '@shinhotech/sh-ui/lib/locale';
 utilsList.forEach(function(file) {
   file = path.basename(file, '.js');
-  externals[`shinho-sh-ui/src/utils/${file}`] = `shinho-sh-ui/lib/utils/${file}`;
+  externals[`@shinhotech/sh-ui/src/utils/${file}`] = `@shinhotech/sh-ui/lib/utils/${file}`;
 });
 mixinsList.forEach(function(file) {
   file = path.basename(file, '.js');
-  externals[`shinho-sh-ui/src/mixins/${file}`] = `shinho-sh-ui/lib/mixins/${file}`;
+  externals[`@shinhotech/sh-ui/src/mixins/${file}`] = `@shinhotech/sh-ui/lib/mixins/${file}`;
 });
 transitionList.forEach(function(file) {
   file = path.basename(file, '.js');
-  externals[`shinho-sh-ui/src/transitions/${file}`] = `shinho-sh-ui/lib/transitions/${file}`;
+  externals[`@shinhotech/sh-ui/src/transitions/${file}`] = `@shinhotech/sh-ui/lib/transitions/${file}`;
 });
 
 externals = [Object.assign({
@@ -36,7 +36,7 @@ exports.alias = {
   main: path.resolve(__dirname, '../src'),
   packages: path.resolve(__dirname, '../packages'),
   examples: path.resolve(__dirname, '../examples'),
-  'shinho-sh-ui': path.resolve(__dirname, '../')
+  '@shinhotech/sh-ui': path.resolve(__dirname, '../')
 };
 
 exports.vue = {

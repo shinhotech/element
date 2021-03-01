@@ -5,18 +5,18 @@
 Instalar mediante npm es la forma recomendada ya que se integra fácilmente con [webpack](https://webpack.js.org/).
 
 ```shell
-npm i shinho-sh-ui -S
+npm i @shinhotech/sh-ui -S
 ```
 
 ### CDN
 
-Obtenga la última versión desde [unpkg.com/shinho-sh-ui](https://unpkg.com/shinho-sh-ui/) , e importe el JavaScript y los archivos CSS en su página.
+Obtenga la última versión desde [unpkg.com/@shinhotech/sh-ui](https://unpkg.com/@shinhotech/sh-ui/) , e importe el JavaScript y los archivos CSS en su página.
 
 ```html
 <!-- import CSS -->
-<link rel="stylesheet" href="https://unpkg.com/shinho-sh-ui/lib/theme-chalk/index.css">
+<link rel="stylesheet" href="https://unpkg.com/@shinhotech/sh-ui/lib/theme-chalk/index.css">
 <!-- import JavaScript -->
-<script src="https://unpkg.com/shinho-sh-ui/lib/index.js"></script>
+<script src="https://unpkg.com/@shinhotech/sh-ui/lib/index.js"></script>
 ```
 
 ##Tip

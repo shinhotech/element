@@ -87,11 +87,11 @@ export interface InstallationOptions {
   size: string
 }
 
-/** The version of shinho-sh-ui */
+/** The version of @shinhotech/sh-ui */
 export const version: string
 
 /**
- * Install all shinho-sh-ui components into Vue.
+ * Install all @shinhotech/sh-ui components into Vue.
  * Please do not invoke this method directly.
  * Call `Vue.use(ElementUI)` to install.
  */

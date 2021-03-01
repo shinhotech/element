@@ -21,7 +21,7 @@
 </template>
 
 <script>
-  import { autoprefixer } from 'shinho-sh-ui/src/utils/util';
+  import { autoprefixer } from '@shinhotech/sh-ui/src/utils/util';
   const CARD_SCALE = 0.83;
   export default {
     name: 'ElCarouselItem',

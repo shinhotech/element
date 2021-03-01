@@ -38,9 +38,9 @@
 </template>
 
 <script>
-  import Popup from 'shinho-sh-ui/src/utils/popup';
-  import Migrating from 'shinho-sh-ui/src/mixins/migrating';
-  import emitter from 'shinho-sh-ui/src/mixins/emitter';
+  import Popup from '@shinhotech/sh-ui/src/utils/popup';
+  import Migrating from '@shinhotech/sh-ui/src/mixins/migrating';
+  import emitter from '@shinhotech/sh-ui/src/mixins/emitter';
 
   export default {
     name: 'ElDialog',

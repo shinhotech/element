@@ -1,6 +1,6 @@
 import { cellStarts, cellForced, defaultRenderCell, treeCellPrefix } from './config';
 import { mergeOptions, parseWidth, parseMinWidth, compose } from './util';
-import ElCheckbox from 'shinho-sh-ui/packages/checkbox';
+import ElCheckbox from '@shinhotech/sh-ui/packages/checkbox';
 
 let columnIdSeed = 1;
 

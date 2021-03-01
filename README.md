@@ -5,21 +5,21 @@
   <a href="https://coveralls.io/github/ElemeFE/element?branch=master">
     <img src="https://coveralls.io/repos/github/ElemeFE/element/badge.svg?branch=master">
   </a>
-  <a href="https://cdnjs.com/libraries/shinho-sh-ui">
-    <img src="https://img.shields.io/cdnjs/v/shinho-sh-ui.svg">
+  <a href="https://cdnjs.com/libraries/@shinhotech/sh-ui">
+    <img src="https://img.shields.io/cdnjs/v/@shinhotech/sh-ui.svg">
   </a>
-  <a href="https://www.npmjs.org/package/shinho-sh-ui">
-    <img src="https://img.shields.io/npm/v/shinho-sh-ui.svg">
+  <a href="https://www.npmjs.org/package/@shinhotech/sh-ui">
+    <img src="https://img.shields.io/npm/v/@shinhotech/sh-ui.svg">
   </a>
-  <a href="https://npmcharts.com/compare/shinho-sh-ui?minimal=true">
-    <img src="http://img.shields.io/npm/dm/shinho-sh-ui.svg">
+  <a href="https://npmcharts.com/compare/@shinhotech/sh-ui?minimal=true">
+    <img src="http://img.shields.io/npm/dm/@shinhotech/sh-ui.svg">
   </a>
   <br>
-  <a href="http://img.badgesize.io/https://unpkg.com/shinho-sh-ui/lib/index.js?compression=gzip&label=gzip%20size:%20JS">
-    <img src="http://img.badgesize.io/https://unpkg.com/shinho-sh-ui/lib/index.js?compression=gzip&label=gzip%20size:%20JS">
+  <a href="http://img.badgesize.io/https://unpkg.com/@shinhotech/sh-ui/lib/index.js?compression=gzip&label=gzip%20size:%20JS">
+    <img src="http://img.badgesize.io/https://unpkg.com/@shinhotech/sh-ui/lib/index.js?compression=gzip&label=gzip%20size:%20JS">
   </a>
-  <a href="http://img.badgesize.io/https://unpkg.com/shinho-sh-ui/lib/theme-chalk/index.css?compression=gzip&label=gzip%20size:%20CSS">
-    <img src="http://img.badgesize.io/https://unpkg.com/shinho-sh-ui/lib/theme-chalk/index.css?compression=gzip&label=gzip%20size:%20CSS">
+  <a href="http://img.badgesize.io/https://unpkg.com/@shinhotech/sh-ui/lib/theme-chalk/index.css?compression=gzip&label=gzip%20size:%20CSS">
+    <img src="http://img.badgesize.io/https://unpkg.com/@shinhotech/sh-ui/lib/theme-chalk/index.css?compression=gzip&label=gzip%20size:%20CSS">
   </a>
   <a href="#backers">
     <img src="https://opencollective.com/element/backers/badge.svg">
@@ -34,7 +34,7 @@
 
 > A Vue.js 2.0 UI Toolkit for Web.
 
-本项目是在element-ui 基础上，进行定制化开发。更名为sh-ui。
+本项目是在element-ui 基础上，进行定制化开发。更名为@shinhotech/sh-ui。
 
 ## Develop Docs
 
@@ -70,13 +70,13 @@
 
 ## Install
 ```shell
-npm install shinho-sh-ui -S
+npm install @shinhotech/sh-ui -S
 ```
 
 ## Quick Start
 ``` javascript
 import Vue from 'vue'
-import Element from 'shinho-sh-ui'
+import Element from '@shinhotech/sh-ui'
 
 Vue.use(Element)
 
@@ -85,7 +85,7 @@ import {
   Select,
   Button
   // ...
-} from 'shinho-sh-ui'
+} from '@shinhotech/sh-ui'
 
 Vue.component(Select.name, Select)
 Vue.component(Button.name, Button)

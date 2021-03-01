@@ -12,7 +12,7 @@ module.exports = {
   output: {
     path: path.resolve(process.cwd(), './lib'),
     publicPath: '/dist/',
-    filename: 'shinho-sh-ui.common.js',
+    filename: '@shinhotech/sh-ui.common.js',
     chunkFilename: '[id].js',
     libraryExport: 'default',
     library: 'ELEMENT',

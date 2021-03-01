@@ -1,9 +1,9 @@
 import Pager from './pager.vue';
-import ElSelect from 'shinho-sh-ui/packages/select';
-import ElOption from 'shinho-sh-ui/packages/option';
-import ElInput from 'shinho-sh-ui/packages/input';
-import Locale from 'shinho-sh-ui/src/mixins/locale';
-import { valueEquals } from 'shinho-sh-ui/src/utils/util';
+import ElSelect from '@shinhotech/sh-ui/packages/select';
+import ElOption from '@shinhotech/sh-ui/packages/option';
+import ElInput from '@shinhotech/sh-ui/packages/input';
+import Locale from '@shinhotech/sh-ui/src/mixins/locale';
+import { valueEquals } from '@shinhotech/sh-ui/src/utils/util';
 
 export default {
   name: 'ElPagination',

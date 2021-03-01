@@ -22,8 +22,8 @@ En main.js:
 
 ```javascript
 import Vue from 'vue';
-import ElementUI from 'shinho-sh-ui';
-import 'shinho-sh-ui/lib/theme-chalk/index.css';
+import ElementUI from '@shinhotech/sh-ui';
+import '@shinhotech/sh-ui/lib/theme-chalk/index.css';
 import App from './App.vue';
 
 Vue.use(ElementUI);
@@ -55,7 +55,7 @@ Luego edite .babelrc:
     [
       "component",
       {
-        "libraryName": "shinho-sh-ui",
+        "libraryName": "@shinhotech/sh-ui
         "styleLibraryName": "theme-chalk"
       }
     ]
@@ -67,7 +67,7 @@ Luego, si necesita Button y Select, edite main.js:
 
 ```javascript
 import Vue from 'vue';
-import { Button, Select } from 'shinho-sh-ui';
+import { Button, Select } from '@shinhotech/sh-ui';
 import App from './App.vue';
 
 Vue.component(Button.name, Button);
@@ -165,7 +165,7 @@ import {
   MessageBox,
   Message,
   Notification
-} from 'shinho-sh-ui';
+} from '@shinhotech/sh-ui';
 
 Vue.use(Pagination);
 Vue.use(Dialog);
@@ -262,7 +262,7 @@ Importando Element completamente：
 
 ```js
 import Vue from 'vue';
-import Element from 'shinho-sh-ui';
+import Element from '@shinhotech/sh-ui';
 Vue.use(Element, { size: 'small', zIndex: 3000 });
 ```
 
@@ -270,7 +270,7 @@ Importando Element parcialmente：
 
 ```js
 import Vue from 'vue';
-import { Button } from 'shinho-sh-ui';
+import { Button } from '@shinhotech/sh-ui';
 
 Vue.prototype.$ELEMENT = { size: 'small', zIndex: 3000 };
 Vue.use(Button);

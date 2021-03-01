@@ -1,4 +1,4 @@
-export * from './shinho-sh-ui'
+export * from './@shinhotech/sh-ui'
 
-import * as ElementUI from './shinho-sh-ui'
+import * as ElementUI from './@shinhotech/sh-ui'
 export default ElementUI

@@ -1,4 +1,4 @@
-import { arrayFind } from 'shinho-sh-ui/src/utils/util';
+import { arrayFind } from '@shinhotech/sh-ui/src/utils/util';
 import { getRowIdentity } from '../util';
 
 export default {

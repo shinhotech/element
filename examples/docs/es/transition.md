@@ -145,9 +145,9 @@ Para efectos de colapsado usar el componente `el-collapse-transition`.
 
 ```js
 // fade/zoom
-import 'shinho-sh-ui/lib/theme-chalk/base.css';
+import '@shinhotech/sh-ui/lib/theme-chalk/base.css';
 // colapsar
-import CollapseTransition from 'shinho-sh-ui/lib/transitions/collapse-transition';
+import CollapseTransition from '@shinhotech/sh-uiansitions/collapse-transition';
 import Vue from 'vue'
 
 Vue.component(CollapseTransition.name, CollapseTransition)

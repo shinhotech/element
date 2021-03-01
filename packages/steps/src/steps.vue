@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import Migrating from 'shinho-sh-ui/src/mixins/migrating';
+import Migrating from '@shinhotech/sh-ui/src/mixins/migrating';
 
 export default {
   name: 'ElSteps',

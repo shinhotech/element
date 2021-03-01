@@ -84,12 +84,12 @@
     prevYear,
     nextYear,
     nextMonth
-  } from 'shinho-sh-ui/src/utils/date-util';
-  import Clickoutside from 'shinho-sh-ui/src/utils/clickoutside';
-  import Locale from 'shinho-sh-ui/src/mixins/locale';
+  } from '@shinhotech/sh-ui/src/utils/date-util';
+  import Clickoutside from '@shinhotech/sh-ui/src/utils/clickoutside';
+  import Locale from '@shinhotech/sh-ui/src/mixins/locale';
   import MonthTable from '../basic/month-table';
-  import ElInput from 'shinho-sh-ui/packages/input';
-  import ElButton from 'shinho-sh-ui/packages/button';
+  import ElInput from '@shinhotech/sh-ui/packages/input';
+  import ElButton from '@shinhotech/sh-ui/packages/button';
 
   const calcDefaultValue = (defaultValue) => {
     if (Array.isArray(defaultValue)) {

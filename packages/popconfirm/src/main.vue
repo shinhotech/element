@@ -36,9 +36,9 @@
 </template>
 
 <script>
-import ElPopover from 'shinho-sh-ui/packages/popover';
-import ElButton from 'shinho-sh-ui/packages/button';
-import {t} from 'shinho-sh-ui/src/locale';
+import ElPopover from '@shinhotech/sh-ui/packages/popover';
+import ElButton from '@shinhotech/sh-ui/packages/button';
+import {t} from '@shinhotech/sh-ui/src/locale';
 
 export default {
   name: 'ElPopconfirm',

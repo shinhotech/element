@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import merge from 'shinho-sh-ui/src/utils/merge';
+import merge from '@shinhotech/sh-ui/src/utils/merge';
 import { getKeysMap, getRowIdentity, getColumnById, getColumnByKey, orderBy, toggleRowStatus } from '../util';
 import expand from './expand';
 import current from './current';

@@ -28,7 +28,7 @@
 </template>
 
 <script>
-  import ElTooltip from 'shinho-sh-ui/packages/tooltip';
+  import ElTooltip from '@shinhotech/sh-ui/packages/tooltip';
 
   export default {
     name: 'ElSliderButton',

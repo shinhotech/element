@@ -59,13 +59,13 @@
 </template>
 <script>
   import debounce from 'throttle-debounce/debounce';
-  import ElInput from 'shinho-sh-ui/packages/input';
-  import Clickoutside from 'shinho-sh-ui/src/utils/clickoutside';
+  import ElInput from '@shinhotech/sh-ui/packages/input';
+  import Clickoutside from '@shinhotech/sh-ui/src/utils/clickoutside';
   import ElAutocompleteSuggestions from './autocomplete-suggestions.vue';
-  import Emitter from 'shinho-sh-ui/src/mixins/emitter';
-  import Migrating from 'shinho-sh-ui/src/mixins/migrating';
-  import { generateId } from 'shinho-sh-ui/src/utils/util';
-  import Focus from 'shinho-sh-ui/src/mixins/focus';
+  import Emitter from '@shinhotech/sh-ui/src/mixins/emitter';
+  import Migrating from '@shinhotech/sh-ui/src/mixins/migrating';
+  import { generateId } from '@shinhotech/sh-ui/src/utils/util';
+  import Focus from '@shinhotech/sh-ui/src/mixins/focus';
 
   export default {
     name: 'ElAutocomplete',

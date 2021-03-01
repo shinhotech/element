@@ -1,4 +1,4 @@
-import VuePopper from 'shinho-sh-ui/src/utils/vue-popper';
+import VuePopper from '@shinhotech/sh-ui/src/utils/vue-popper';
 import { createTest } from '../util';
 
 const Popper = Object.assign({}, VuePopper, {

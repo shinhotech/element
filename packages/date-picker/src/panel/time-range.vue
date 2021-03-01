@@ -62,8 +62,8 @@
     modifyDate,
     clearMilliseconds,
     timeWithinRange
-  } from 'shinho-sh-ui/src/utils/date-util';
-  import Locale from 'shinho-sh-ui/src/mixins/locale';
+  } from '@shinhotech/sh-ui/src/utils/date-util';
+  import Locale from '@shinhotech/sh-ui/src/mixins/locale';
   import TimeSpinner from '../basic/time-spinner';
 
   const MIN_TIME = parseDate('00:00:00', 'HH:mm:ss');

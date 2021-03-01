@@ -30,8 +30,8 @@
 </template>
 <script>
   import Menu from './menu-mixin';
-  import ElTooltip from 'shinho-sh-ui/packages/tooltip';
-  import Emitter from 'shinho-sh-ui/src/mixins/emitter';
+  import ElTooltip from '@shinhotech/sh-ui/packages/tooltip';
+  import Emitter from '@shinhotech/sh-ui/src/mixins/emitter';
 
   export default {
     name: 'ElMenuItem',

@@ -16,8 +16,8 @@
 </template>
 
 <script type="text/babel">
-  import Emitter from 'shinho-sh-ui/src/mixins/emitter';
-  import { getValueByPath, escapeRegexpString } from 'shinho-sh-ui/src/utils/util';
+  import Emitter from '@shinhotech/sh-ui/src/mixins/emitter';
+  import { getValueByPath, escapeRegexpString } from '@shinhotech/sh-ui/src/utils/util';
 
   export default {
     mixins: [Emitter],

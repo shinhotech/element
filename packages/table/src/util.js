@@ -1,4 +1,4 @@
-import { getValueByPath } from 'shinho-sh-ui/src/utils/util';
+import { getValueByPath } from '@shinhotech/sh-ui/src/utils/util';
 
 export const getCell = function(event) {
   let cell = event.target;

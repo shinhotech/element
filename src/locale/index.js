@@ -1,4 +1,4 @@
-import defaultLang from 'shinho-sh-ui/src/locale/lang/zh-CN';
+import defaultLang from '@shinhotech/sh-ui/src/locale/lang/zh-CN';
 import Vue from 'vue';
 import deepmerge from 'deepmerge';
 import Format from './format';

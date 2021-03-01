@@ -19,15 +19,15 @@ Este sitio, le permitirá obtener una vista previa del tema con un nuevo color e
 $--color-primary: teal;
 
 /* Ubicación de la fuente, obligatoria */
-$--font-path: '~shinho-sh-ui/lib/theme-chalk/fonts';
+$--font-path: '~@shinhotech/sh-ui/lib/theme-chalk/fonts';
 
-@import "~shinho-sh-ui/packages/theme-chalk/src/index";
+@import "~@shinhotech/sh-ui/packages/theme-chalk/src/index";
 ```
 
 Entonces, en el archivo principal del proyecto, importe este archivo de estilos en lugar de los estilos de Element:
 ```JS
 import Vue from 'vue'
-import Element from 'shinho-sh-ui'
+import Element from '@shinhotech/sh-ui'
 import './element-variables.scss'
 
 Vue.use(Element)
@@ -106,7 +106,7 @@ Importar su propio tema es igual que importar el tema por defecto, sol que esta 
 
 ```javascript
 import '../theme/index.css'
-import ElementUI from 'shinho-sh-ui'
+import ElementUI from '@shinhotech/sh-ui'
 import Vue from 'vue'
 
 Vue.use(ElementUI)
@@ -120,7 +120,7 @@ Si esta utilizando `babel-plugin-component` para importar bajo demanda, solo deb
     [
       "component",
       {
-        "libraryName": "shinho-sh-ui",
+        "libraryName": "@shinhotech/sh-ui",
         "styleLibraryName": "~theme"
       }
     ]

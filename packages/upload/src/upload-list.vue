@@ -63,8 +63,8 @@
   </transition-group>
 </template>
 <script>
-  import Locale from 'shinho-sh-ui/src/mixins/locale';
-  import ElProgress from 'shinho-sh-ui/packages/progress';
+  import Locale from '@shinhotech/sh-ui/src/mixins/locale';
+  import ElProgress from '@shinhotech/sh-ui/packages/progress';
 
   export default {
 

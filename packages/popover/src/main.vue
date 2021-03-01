@@ -24,10 +24,10 @@
   </span>
 </template>
 <script>
-import Popper from 'shinho-sh-ui/src/utils/vue-popper';
-import { on, off } from 'shinho-sh-ui/src/utils/dom';
-import { addClass, removeClass } from 'shinho-sh-ui/src/utils/dom';
-import { generateId } from 'shinho-sh-ui/src/utils/util';
+import Popper from '@shinhotech/sh-ui/src/utils/vue-popper';
+import { on, off } from '@shinhotech/sh-ui/src/utils/dom';
+import { addClass, removeClass } from '@shinhotech/sh-ui/src/utils/dom';
+import { generateId } from '@shinhotech/sh-ui/src/utils/util';
 
 export default {
   name: 'ElPopover',

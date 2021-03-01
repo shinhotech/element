@@ -173,7 +173,7 @@ Show a full screen animation while loading data.
 ### Service
 You can also invoke Loading with a service. Import Loading service:
 ```javascript
-import { Loading } from 'shinho-sh-ui';
+import { Loading } from '@shinhotech/sh-ui';
 ```
 Invoke it:
 ```javascript

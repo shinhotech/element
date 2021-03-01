@@ -1,6 +1,6 @@
 <script>
-import fecha from 'shinho-sh-ui/src/utils/date';
-import { range as rangeArr, getFirstDayOfMonth, getPrevMonthLastDays, getMonthDays, getI18nSettings, validateRangeInOneMonth } from 'shinho-sh-ui/src/utils/date-util';
+import fecha from '@shinhotech/sh-ui/src/utils/date';
+import { range as rangeArr, getFirstDayOfMonth, getPrevMonthLastDays, getMonthDays, getI18nSettings, validateRangeInOneMonth } from '@shinhotech/sh-ui/src/utils/date-util';
 
 export default {
   props: {

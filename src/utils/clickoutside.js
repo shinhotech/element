@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { on } from 'shinho-sh-ui/src/utils/dom';
+import { on } from '@shinhotech/sh-ui/src/utils/dom';
 
 const nodeList = [];
 const ctx = '@@clickoutsideContext';

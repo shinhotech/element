@@ -79,13 +79,13 @@
 </template>
 
 <script type="text/babel">
-  import Popup from 'shinho-sh-ui/src/utils/popup';
-  import Locale from 'shinho-sh-ui/src/mixins/locale';
-  import ElInput from 'shinho-sh-ui/packages/input';
-  import ElButton from 'shinho-sh-ui/packages/button';
-  import { addClass, removeClass } from 'shinho-sh-ui/src/utils/dom';
-  import { t } from 'shinho-sh-ui/src/locale';
-  import Dialog from 'shinho-sh-ui/src/utils/aria-dialog';
+  import Popup from '@shinhotech/sh-ui/src/utils/popup';
+  import Locale from '@shinhotech/sh-ui/src/mixins/locale';
+  import ElInput from '@shinhotech/sh-ui/packages/input';
+  import ElButton from '@shinhotech/sh-ui/packages/button';
+  import { addClass, removeClass } from '@shinhotech/sh-ui/src/utils/dom';
+  import { t } from '@shinhotech/sh-ui/src/locale';
+  import Dialog from '@shinhotech/sh-ui/src/utils/aria-dialog';
 
   let messageBox;
   let typeMap = {

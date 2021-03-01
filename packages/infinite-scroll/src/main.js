@@ -4,10 +4,10 @@ import {
   isFunction,
   isUndefined,
   isDefined
-} from 'shinho-sh-ui/src/utils/types';
+} from '@shinhotech/sh-ui/src/utils/types';
 import {
   getScrollContainer
-} from 'shinho-sh-ui/src/utils/dom';
+} from '@shinhotech/sh-ui/src/utils/dom';
 
 const getStyleComputedProperty = (element, property) => {
   if (element === window) {

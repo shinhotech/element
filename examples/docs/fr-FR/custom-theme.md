@@ -21,15 +21,15 @@ Le site précédent vous permet de visualiser et de télécharger un nouveau th�
 $--color-primary: teal;
 
 /* chemin vers le fichier de police, requis */
-$--font-path: '~shinho-sh-ui/lib/theme-chalk/fonts';
+$--font-path: '~@shinhotech/sh-uieme-chalk/fonts';
 
-@import "~shinho-sh-ui/packages/theme-chalk/src/index";
+@import "~@shinhotech/sh-uie-chalk/src/index";
 ```
 
 Puis dans le fichier d'entrée, importez ce style au lieu de celui d'Element:
 ```JS
 import Vue from 'vue'
-import Element from 'shinho-sh-ui'
+import Element from '@shinhotech/sh-ui'
 import './element-variables.scss'
 
 Vue.use(Element)
@@ -109,7 +109,7 @@ Importing your own theme is just like importing the default theme, only this tim
 
 ```javascript
 import '../theme/index.css'
-import ElementUI from 'shinho-sh-ui'
+import ElementUI from '@shinhotech/sh-ui'
 import Vue from 'vue'
 
 Vue.use(ElementUI)
@@ -123,7 +123,7 @@ Si vous utilisez `babel-plugin-component` pour les imports sur demande, modifiez
     [
       "component",
       {
-        "libraryName": "shinho-sh-ui",
+        "libraryName": "@shinhotech/sh-ui",
         "styleLibraryName": "~theme"
       }
     ]

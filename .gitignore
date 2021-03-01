@@ -11,12 +11,12 @@ lerna-debug.log.*
 lib
 .idea
 .vscode
-examples/shinho-sh-ui
+examples/@shinhotech/sh-ui
 examples/pages/en-US
 examples/pages/zh-CN
 examples/pages/es
 examples/pages/fr-FR
-fe.element/shinho-sh-ui
+fe.element/@shinhotech/sh-ui
 .npmrc
 coverage
 waiter.config.js

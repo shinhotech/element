@@ -5,18 +5,18 @@
 Installer Element via npm est recommandé, il fonctionne parfaitement avec [webpack](https://webpack.js.org/).
 
 ```shell
-npm i shinho-sh-ui -S
+npm i @shinhotech/sh-ui -S
 ```
 
 ### CDN
 
-Obtenez la dernière version via [unpkg.com/shinho-sh-ui](https://unpkg.com/shinho-sh-ui/), et importez le JavaScript et le CSS dans votre page.
+Obtenez la dernière version via [unpkg.com/@shinhotech/sh-ui](https://unpkg.com/@shinhotech/sh-ui/), et importez le JavaScript et le CSS dans votre page.
 
 ```html
 <!-- import du CSS -->
-<link rel="stylesheet" href="https://unpkg.com/shinho-sh-ui/lib/theme-chalk/index.css">
+<link rel="stylesheet" href="https://unpkg.com/@shinhotech/sh-ui/lib/theme-chalk/index.css">
 <!-- import du JavaScript -->
-<script src="https://unpkg.com/shinho-sh-ui/lib/index.js"></script>
+<script src="https://unpkg.com/@shinhotech/sh-ui/lib/index.js"></script>
 ```
 
 :::tip

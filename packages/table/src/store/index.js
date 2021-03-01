@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Watcher from './watcher';
-import { arrayFind } from 'shinho-sh-ui/src/utils/util';
+import { arrayFind } from '@shinhotech/sh-ui/src/utils/util';
 
 Watcher.prototype.mutations = {
   setData(states, data) {
