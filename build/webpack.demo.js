@@ -153,7 +153,7 @@ if (isProd) {
     cacheGroups: {
       vendor: {
         test: /\/src\//,
-        name: '@shinhotech/sh-ui',
+        name: 'shinhotech/sh-ui',
         chunks: 'all'
       }
     }
