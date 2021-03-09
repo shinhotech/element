@@ -334,6 +334,7 @@
               </span>
               <el-dropdown-menu
                 slot="dropdown"
+                disabled
                 class="nav-dropdown-list"
                 @input="handleVerDropdownToggle">
                 <el-dropdown-item
