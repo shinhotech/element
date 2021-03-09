@@ -166,7 +166,9 @@
                   active-class="active"
                   :to="base + navItem.path"
                   exact
-                  v-text="navItem.title"></router-link>
+                  :title="navItem.meta ? navItem.meta.Message : ''"
+                  v-text="navItem.title">
+                  </router-link>
               </li>
             </ul>
           </div>

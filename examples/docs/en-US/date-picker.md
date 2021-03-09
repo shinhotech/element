@@ -117,7 +117,7 @@ You can choose week, month, year or multiple dates by extending the standard dat
       v-model="value5"
       type="quarter"
       :picker-options="pickerOptions"
-      format="yyyy-QQ-MM"
+      format="yyyy-QQ"
       value-format="yyyy-MM"
       placeholder="选择季度"
       @change="handleChange"
@@ -136,10 +136,10 @@ You can choose week, month, year or multiple dates by extending the standard dat
           }
         },
         value1: '',
-        value2: '2020-03',
+        value2: '',
         value3: '',
         value4: '',
-        value5: new Date('2020-10')
+        value5: ''
       };
     },
     watch: {

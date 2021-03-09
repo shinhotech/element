@@ -38,6 +38,10 @@
       ]
     },
     {
+      "name": "sh组件",
+      "groups": []
+    },
+    {
       "name": "组件",
       "groups": [
         {
@@ -118,7 +122,10 @@
             },
             {
               "path": "/date-picker",
-              "title": "DatePicker 日期选择器"
+              "title": "DatePicker 日期选择器",
+              "meta": {
+                "Message": "新增季度筛选框"
+              }
             },
             {
               "path": "/datetime-picker",
@@ -416,7 +423,10 @@
             },
             {
               "path": "/date-picker",
-              "title": "DatePicker"
+              "title": "DatePicker",
+              "meta": {
+                "Message": "add type='quarter'"
+              }
             },
             {
               "path": "/datetime-picker",

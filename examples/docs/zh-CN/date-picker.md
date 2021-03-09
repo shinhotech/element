@@ -119,7 +119,7 @@
     <el-date-picker
       v-model="value5"
       type="quarter"
-      format="yyyy-QQ-MM"
+      format="yyyy-QQ"
       value-format="yyyy-MM"
       :picker-options="pickerOptions"
       placeholder="选择季度"
@@ -139,10 +139,10 @@
           }
         },
         value1: '',
-        value2: '2020-03',
+        value2: '',
         value3: '',
         value4: '',
-        value5: new Date('2020-10')
+        value5: ''
       };
     },
     watch: {
